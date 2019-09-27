@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="FirstDemoSuite">
+ 
+ <test name="FirstTesting">
+ 	 <parameter name="dataFile" value="SomeTestCases.xlsx" />
+ 	 <parameter name="dataSheet" value="TestData"/>
+ 	 <classes>
+	 	<class name="scripts.TestCaseClass">
+	 		<methods>
+					<include name="demoTestCase"></include>
+			</methods>
+		</class>
+	 </classes>
+ </test>
+ 
+
+ 
+</suite>

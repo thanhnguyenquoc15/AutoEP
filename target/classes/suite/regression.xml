@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+
+<suite name="regression">
+ 
+ <test name="FirstTesting">
+ 	 <parameter name="dataFile" value="SomeTestCases.xlsx" />
+ 	 <parameter name="dataSheet" value="Role"/>
+ 	 <classes>
+	 	<class name="scripts.TestCaseClass">
+	 		<methods>
+					<include name="add_new_user"></include>
+			</methods>
+		</class>
+	 </classes>
+ </test>
+ 
+<!--  <test name="test1 test mpp">
+ 	 <parameter name="dataFile" value="SomeTestCases.xlsx" />
+ 	 <parameter name="dataSheet" value="TestData"/>
+ 	 <classes>
+	 	<class name="testPackage.TestCaseClass">
+	 		<methods>
+					<include name="demoTestCase"></include>
+			</methods>
+		</class>
+	 </classes>
+ </test> -->
+ 
+</suite>
