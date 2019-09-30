@@ -24,8 +24,6 @@ public class ReadData {
 	private static XSSFWorkbook workbook;
 	private static XSSFSheet sheet;
 	
-// thanh testing
-
 //	public static final String userDir = "C:\\Users\\nqthanh1\\Desktop\\AutoEP";
 	public static final String userDir = System.getProperty("user.dir");
 	public static final String testDataDir = "\\src\\main\\java\\data\\";
