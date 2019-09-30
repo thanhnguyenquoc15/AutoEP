@@ -25,7 +25,7 @@ public class ReadData {
 	private static XSSFSheet sheet;
 	
 	
-
+//123451234
 //	public static final String userDir = "C:\\Users\\nqthanh1\\Desktop\\AutoEP";
 	public static final String userDir = System.getProperty("user.dir");
 	public static final String testDataDir = "\\src\\main\\java\\data\\";
