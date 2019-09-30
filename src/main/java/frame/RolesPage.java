@@ -4,12 +4,10 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import lib.BrowserFactory;
 import lib.ReadData;
-import frame.RolesPage;
 
 public class RolesPage {
 
@@ -24,66 +22,97 @@ public class RolesPage {
 		WebElement roleName = driver.findElement(By.xpath("//a[text()=\"" + rName + "\"]"));
 		return roleName;
 	}
-    //method to change password longevity for roles
+	
+	//method to change password longevity for roles
 	public WebElement penRoleName(String rName) {
 		WebElement penRoleName = driver.findElement(
 				By.xpath("//a[text()=\"" + rName + "\"]/../../td[@class=\"centercolumn\"]/table/tbody/tr/td[3]/a"));
 		return penRoleName;
 	}
-    //method to choose check boxs Dynamic
-	public WebElement checkBoxRoleName(String rName) {
+	
+    //method to choose check box roles
+	public WebElement checkboxRoleName(String rName) {
 		WebElement checkBoxRoleName = driver
 				.findElement(By.xpath("//a[text()=\"" + rName + "\"]/../..//input[@type=\"checkbox\"]"));
 		return checkBoxRoleName;
 	}
+	
 	//method to use buttons - Add/Delete/Help
 	public WebElement Button(String buttonName) {
 		WebElement Button = driver.findElement(By.xpath("//input[@value=\"" + buttonName + "\"]"));
 		return Button;
 	}
-	//method to choose descending order to role by name
-	public WebElement nameDscRole() {
-		WebElement nameDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Dsc\"]"));
-		return nameDscRole;
-	}
-	//method to choose ascending order to role by name
-	public WebElement nameAscRole() {
-		WebElement nameAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Asc\"]"));
-		return nameAscRole;
-	}
-	//method to choose descending order to role by type
-	public WebElement typeDscRole() {
-		WebElement typeDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:type_Dsc\"]"));
-		return typeDscRole;
-	}
-	//method to choose ascending order to role by name
-	public WebElement typeAscRole() {
-		WebElement typeAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:type_Asc\"]"));
-		return typeAscRole;
-	}
-	//method to check all roles
-	public WebElement checkBoxAllRole() {
-		WebElement checkBoxAllRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:allDeleted\"]"));
-		return checkBoxAllRole;
-	}
+	
+	//Element to choose descending order to role by name
+	WebElement nameDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Dsc\"]"));
+
+	//Element to choose ascending order to role by name
+	WebElement nameAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Asc\"]"));
+
+	//Element to choose descending order to role by type
+	WebElement typeDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:type_Dsc\"]"));
+
+	//Element to choose ascending order to role by name
+	WebElement typeAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:type_Asc\"]"));
+
+	//Element to check all roles
+	WebElement checkboxAllRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:allDeleted\"]"));
+
+	//Element to input name role when create a new role
+	WebElement inputNameRole = driver.findElement(By.xpath("//input[@id=\"role:roleName\"]"));
+
+	//Element to enable organization for role when create a new role
+	WebElement enableOrgRole = driver.findElement(By.xpath("//input[@id=\"role:orgEnable:0\"]"));
+
+	//Element to disable organization for role when create a new role
+	WebElement disableOrgRole = driver.findElement(By.xpath("//input[@id=\"role:orgEnable:1\"]"));
+
+	//Element to select organization for role when create a new role
+	WebElement selectOrgRole = driver.findElement(By.xpath("//select[@id=\"role:organizationSelect\"]"));
+
+	//Element to select system/organization password longevity for role when create a new role
+	WebElement sysPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:enforcePwdLongevity:0\"]"));
+
+	//Element to select custom password longevity for role when create a new role
+	WebElement cusPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:enforcePwdLongevity:1\"]"));
+
+	//Element to set days for custom password longevity for role when create a new role
+	WebElement dayPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:passwordLongevity\"]"));
+
+	//Element to select start with role for role when create a new role
+	WebElement startWithRole = driver.findElement(By.xpath("//select[@id=\"role:startWith\"]"));
+
+	//Element to expand all role when create a new role
+	WebElement expandLinkRole = driver.findElement(By.xpath("//a[@id=\"roleEdit:expandlink\"]"));
+	
+	//Element to collapse all role when create a new role
+	WebElement collapseLinkRole = driver.findElement(By.xpath("//a[@id=\"roleEdit:collapselink\"]"));
+
+	//Element to assign system for role in change Password Longevity page
+	WebElement pwdLongevitySysRole = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:enforcePwdLongevity:0\"]"));
+	
+	//Element to assign custom for role in change Password Longevity page
+	WebElement pwdLongevityCusRole = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:enforcePwdLongevity:1\"]"));
+	
+	//Element to set days for role in change Password Longevity page
+	WebElement pwdLongevityRole = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:passwordLongevity\"]"));
+
 	
 	
 	// Method to Delete Role
-	public void deleteRole(String nRole) {
+	public void deleteRole(String nameRole) {
 		log.info("Detele Role");
 
-		checkBoxRoleName(nRole).click();
+		checkboxRoleName(nameRole).click();
 		Button("Delete").click();
 	}	
 	
 	// Method to Delete All Role
 	public void deleteAllRole() {
 		log.info("Detele Role");
-		checkBoxAllRole().click();
+		checkboxAllRole.click();
 		//checkBoxRoleName(nameRole).click();
 		Button("Delete").click();
 	}	
-	
-	// hello every body, today, i eo lam gi het
 
 } 
