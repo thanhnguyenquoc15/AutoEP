@@ -15,6 +15,16 @@
 	 </classes>
  </test>
  
-
+<test name="emailAddresses">
+ 	 <parameter name="dataFile" value="emailAddresses.xlsx" />
+ 	 <parameter name="dataSheet" value="emailTC"/>
+ 	 <classes>
+	 	<class name="scripts.emailUI">
+	 		<methods>
+					<include name="emailAddresses"></include>
+			</methods>
+		</class>
+	 </classes>
+ </test>
  
 </suite>
