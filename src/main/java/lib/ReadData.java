@@ -24,12 +24,7 @@ public class ReadData {
 	private static XSSFWorkbook workbook;
 	private static XSSFSheet sheet;
 	
-//phuminhminh123
-	
-//123451234
-
-//haha
-
+//78910
 
 //	public static final String userDir = "C:\\Users\\nqthanh1\\Desktop\\AutoEP";
 	public static final String userDir = System.getProperty("user.dir");
