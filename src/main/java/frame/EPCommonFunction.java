@@ -36,8 +36,7 @@ public class EPCommonFunction {
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				}
-				
+				}				
 			}
 		
 		public  void switchFrame(String frame) {
