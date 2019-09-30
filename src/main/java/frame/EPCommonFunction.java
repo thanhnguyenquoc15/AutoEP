@@ -34,7 +34,7 @@ public class EPCommonFunction {
 				
 			}
 		
-		public  void switchFrame(String frame) {
+		public void switchFrame(String frame) {
 			
 			driver.switchTo().defaultContent();
 			driver.switchTo().frame(frame);

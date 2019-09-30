@@ -44,6 +44,13 @@ public class ReadData {
 	
 	public static final String BROWSER = readPropertyValue("BROWSER");
 	
+	//SSH detail 
+	
+	public static final String EPUser_SSH = readPropertyValue("EPUser_SSH");
+	public static final String EPPass_SSH = readPropertyValue("EPPass_SSH");
+		
+	
+	
 	
 	
 	public static void loadExcelFile(String fileName, String sheetName) throws IOException
