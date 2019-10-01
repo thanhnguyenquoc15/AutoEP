@@ -14,6 +14,9 @@ public class EPCommonFunction {
 
 	private String menuFrame = "menu";
 	
+	private String mainFrame = "main";
+	
+	
 	protected Logger log = Logger.getLogger(this.getClass().getName());
 	
 	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
@@ -27,11 +30,13 @@ public class EPCommonFunction {
 			Thread.sleep(500);
 			driver.findElement(By.partialLinkText(page)).click();
 			Thread.sleep(500);
+			//add 2 lines to change to main frame 
+			driver.switchTo().defaultContent();
+			driver.switchTo().frame(mainFrame);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				}
-				
+				}				
 			}
 		
 		public  void switchFrame(String frame) {
