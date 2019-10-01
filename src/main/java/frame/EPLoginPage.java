@@ -5,6 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import lib.BrowserFactory;
+import lib.ReadData;
+
 import org.apache.log4j.Logger;
 
 
@@ -13,8 +18,6 @@ public class EPLoginPage {
 	
 	// Define logger
 	protected Logger log = Logger.getLogger(this.getClass().getName());
-	
-
 	
 	// Page Objects
 	@FindBy(xpath="//input[@type=\"text\"]")
