@@ -23,7 +23,7 @@ public class BrowserFactory {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		options.setPageLoadStrategy(PageLoadStrategy.NONE);
-		System.setProperty("webdriver.chrome.driver", "D:\\MyAutomationProject\\driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ReadData.userDir +"\\src\\main\\java\\lib\\Driver\\chromedriver.exe");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
