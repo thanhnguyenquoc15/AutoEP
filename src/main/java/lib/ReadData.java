@@ -24,6 +24,7 @@ public class ReadData {
 	private static XSSFWorkbook workbook;
 	private static XSSFSheet sheet;
 	
+
 	public static final String userDir = System.getProperty("user.dir");
 	public static final String testDataDir = "\\src\\main\\java\\data\\";
 	
@@ -40,6 +41,13 @@ public class ReadData {
 	public static final String EPPass = readPropertyValue("EPPass");
 	
 	public static final String BROWSER = readPropertyValue("BROWSER");
+	
+	//SSH detail 
+	
+	public static final String EPUser_SSH = readPropertyValue("EPUser_SSH");
+	public static final String EPPass_SSH = readPropertyValue("EPPass_SSH");
+		
+	
 	
 	
 	

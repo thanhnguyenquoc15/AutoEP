@@ -64,8 +64,7 @@ public class TestCaseClass extends HelperClass {
 		ComFunc.switchEPMenu("Users");
 		ComFunc.switchFrame("main");
         
-		userpage.add_new_user(testData.get("uName").toString(),"",
-				testData.get("Role").toString(),"","","");
+		userpage.add_new_user(testData.get("uName").toString(),"",testData.get("Role").toString(),"","","");
 	}
 
 	
