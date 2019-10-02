@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
+<testng-results skipped="0" failed="0" ignored="2" total="6" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="FirstDemoSuite" duration-ms="3993" started-at="2019-09-30T02:51:11Z" finished-at="2019-09-30T02:51:15Z">
+  <suite name="FirstDemoSuite" duration-ms="12610" started-at="2019-10-02T15:53:23Z" finished-at="2019-10-02T15:53:35Z">
     <groups>
     </groups>
-    <test name="FirstTesting" duration-ms="3993" started-at="2019-09-30T02:51:11Z" finished-at="2019-09-30T02:51:15Z">
+    <test name="FirstTesting" duration-ms="2932" started-at="2019-10-02T15:53:23Z" finished-at="2019-10-02T15:53:26Z">
       <class name="scripts.TestCaseClass">
-        <test-method status="PASS" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:scripts.TestCaseClass@724f138e]" name="beforeSuite" is-config="true" duration-ms="2315" started-at="2019-09-30T02:51:09Z" finished-at="2019-09-30T02:51:11Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5432c277]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="beforeClass" is-config="true" duration-ms="2" started-at="2019-09-30T02:51:11Z" finished-at="2019-09-30T02:51:11Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:scripts.TestCaseClass@6a8658ff]" name="beforeClass" is-config="true" duration-ms="1" started-at="2019-10-02T15:53:23Z" finished-at="2019-10-02T15:53:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="demoTestCase(java.util.Hashtable)[pri:0, instance:scripts.TestCaseClass@724f138e]" name="demoTestCase" duration-ms="1276" started-at="2019-09-30T02:51:13Z" data-provider="dataMap" finished-at="2019-09-30T02:51:14Z">
+        <test-method status="PASS" signature="beforeMethodClass()[pri:0, instance:scripts.TestCaseClass@6a8658ff]" name="beforeMethodClass" is-config="true" duration-ms="1" started-at="2019-10-02T15:53:23Z" finished-at="2019-10-02T15:53:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodClass -->
+        <test-method status="PASS" signature="demoTestCase(java.util.Hashtable)[pri:0, instance:scripts.TestCaseClass@6a8658ff]" name="demoTestCase" duration-ms="1216" started-at="2019-10-02T15:53:23Z" data-provider="dataMap" finished-at="2019-10-02T15:53:24Z">
           <params>
             <param index="0">
               <value>
@@ -33,11 +26,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- demoTestCase -->
-        <test-method status="PASS" signature="beforeMethodClass()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="beforeMethodClass" is-config="true" duration-ms="0" started-at="2019-09-30T02:51:13Z" finished-at="2019-09-30T02:51:13Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:scripts.TestCaseClass@6a8658ff]" name="close" is-config="true" duration-ms="1" started-at="2019-10-02T15:53:24Z" finished-at="2019-10-02T15:53:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethodClass -->
-        <test-method status="PASS" signature="demoTestCase(java.util.Hashtable)[pri:0, instance:scripts.TestCaseClass@724f138e]" name="demoTestCase" duration-ms="1225" started-at="2019-09-30T02:51:14Z" data-provider="dataMap" finished-at="2019-09-30T02:51:15Z">
+        </test-method> <!-- close -->
+        <test-method status="PASS" signature="demoTestCase(java.util.Hashtable)[pri:0, instance:scripts.TestCaseClass@6a8658ff]" name="demoTestCase" duration-ms="1176" started-at="2019-10-02T15:53:24Z" data-provider="dataMap" finished-at="2019-10-02T15:53:26Z">
           <params>
             <param index="0">
               <value>
@@ -48,27 +41,84 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- demoTestCase -->
-        <test-method status="PASS" signature="beforeMethodClass()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="beforeMethodClass" is-config="true" duration-ms="0" started-at="2019-09-30T02:51:14Z" finished-at="2019-09-30T02:51:14Z">
+        <test-method status="PASS" signature="beforeMethodClass()[pri:0, instance:scripts.TestCaseClass@6a8658ff]" name="beforeMethodClass" is-config="true" duration-ms="0" started-at="2019-10-02T15:53:24Z" finished-at="2019-10-02T15:53:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodClass -->
-        <test-method status="PASS" signature="close()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="close" is-config="true" duration-ms="0" started-at="2019-09-30T02:51:14Z" finished-at="2019-09-30T02:51:14Z">
+        <test-method status="PASS" signature="close()[pri:0, instance:scripts.TestCaseClass@6a8658ff]" name="close" is-config="true" duration-ms="0" started-at="2019-10-02T15:53:26Z" finished-at="2019-10-02T15:53:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-        <test-method status="PASS" signature="close()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="close" is-config="true" duration-ms="2" started-at="2019-09-30T02:51:15Z" finished-at="2019-09-30T02:51:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-09-30T02:51:15Z" finished-at="2019-09-30T02:51:15Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:scripts.TestCaseClass@6a8658ff]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-02T15:53:26Z" finished-at="2019-10-02T15:53:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="afterSuite" is-config="true" duration-ms="823" started-at="2019-09-30T02:51:15Z" finished-at="2019-09-30T02:51:16Z">
+      </class> <!-- scripts.TestCaseClass -->
+    </test> <!-- FirstTesting -->
+    <test name="emailAddresses" duration-ms="9647" started-at="2019-10-02T15:53:26Z" finished-at="2019-10-02T15:53:35Z">
+      <class name="scripts.emailUI">
+        <test-method status="PASS" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:scripts.emailUI@2657d4dd]" name="beforeSuite" is-config="true" duration-ms="2379" started-at="2019-10-02T15:53:20Z" finished-at="2019-10-02T15:53:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@352c308]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:scripts.emailUI@2657d4dd]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-10-02T15:53:26Z" finished-at="2019-10-02T15:53:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="emailAddresses(java.util.Hashtable)[pri:0, instance:scripts.emailUI@2657d4dd]" name="emailAddresses" duration-ms="5156" started-at="2019-10-02T15:53:26Z" data-provider="dataMap" finished-at="2019-10-02T15:53:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emailAddresses -->
+        <test-method status="PASS" signature="beforeMethodClass()[pri:0, instance:scripts.emailUI@2657d4dd]" name="beforeMethodClass" is-config="true" duration-ms="0" started-at="2019-10-02T15:53:26Z" finished-at="2019-10-02T15:53:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodClass -->
+        <test-method status="PASS" signature="close()[pri:0, instance:scripts.emailUI@2657d4dd]" name="close" is-config="true" duration-ms="0" started-at="2019-10-02T15:53:31Z" finished-at="2019-10-02T15:53:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+        <test-method status="PASS" signature="emailAddresses(java.util.Hashtable)[pri:0, instance:scripts.emailUI@2657d4dd]" name="emailAddresses" duration-ms="4485" started-at="2019-10-02T15:53:31Z" data-provider="dataMap" finished-at="2019-10-02T15:53:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Key=Value2, user=admin1, pass=, page=EPM Servers}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emailAddresses -->
+        <test-method status="PASS" signature="beforeMethodClass()[pri:0, instance:scripts.emailUI@2657d4dd]" name="beforeMethodClass" is-config="true" duration-ms="0" started-at="2019-10-02T15:53:31Z" finished-at="2019-10-02T15:53:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodClass -->
+        <test-method status="PASS" signature="close()[pri:0, instance:scripts.emailUI@2657d4dd]" name="close" is-config="true" duration-ms="0" started-at="2019-10-02T15:53:35Z" finished-at="2019-10-02T15:53:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:scripts.emailUI@2657d4dd]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-02T15:53:35Z" finished-at="2019-10-02T15:53:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:scripts.emailUI@2657d4dd]" name="afterSuite" is-config="true" duration-ms="795" started-at="2019-10-02T15:53:35Z" finished-at="2019-10-02T15:53:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- scripts.TestCaseClass -->
-    </test> <!-- FirstTesting -->
+      </class> <!-- scripts.emailUI -->
+    </test> <!-- emailAddresses -->
   </suite> <!-- FirstDemoSuite -->
 </testng-results>

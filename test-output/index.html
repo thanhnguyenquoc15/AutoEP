@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-FirstDemoSuite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +102,22 @@
                     <div class="method-list-content passed suite-FirstDemoSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-FirstDemoSuite" title="scripts.TestCaseClass" hash-for-method="demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-FirstDemoSuite" title="scripts.TestCaseClass" hash-for-method="demoTestCase({Key=Value2, user=admin1, pass=, page=EPM Servers})">demoTestCase({Key=Value2, user=admin1, pass=, page=EPM Servers})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-FirstDemoSuite" title="scripts.TestCaseClass" hash-for-method="demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-FirstDemoSuite" title="scripts.emailUI" hash-for-method="emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})">emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-FirstDemoSuite" title="scripts.emailUI" hash-for-method="emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-FirstDemoSuite -->
@@ -130,17 +140,41 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">
+                  </a> <!-- demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers}) -->
+                  <span class="method-name">demoTestCase</span>
+                  <span class="parameters">({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="demoTestCase({Key=Value2, user=admin1, pass=, page=EPM Servers})">
                   </a> <!-- demoTestCase({Key=Value2, user=admin1, pass=, page=EPM Servers}) -->
                   <span class="method-name">demoTestCase</span>
                   <span class="parameters">({Key=Value2, user=admin1, pass=, page=EPM Servers})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-FirstDemoSuite-class-passed -->
+          <div class="suite-FirstDemoSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">scripts.emailUI</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">
-                  </a> <!-- demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers}) -->
-                  <span class="method-name">demoTestCase</span>
+                  <a name="emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})">
+                  </a> <!-- emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers}) -->
+                  <span class="method-name">emailAddresses</span>
+                  <span class="parameters">({Key=Value2, user=admin1, pass=, page=EPM Servers})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">
+                  </a> <!-- emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers}) -->
+                  <span class="method-name">emailAddresses</span>
                   <span class="parameters">({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -167,6 +201,17 @@
       &lt;/class&gt; &lt;!-- scripts.TestCaseClass --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- FirstTesting --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;emailAddresses&quot;&gt;
+    &lt;parameter name=&quot;dataFile&quot; value=&quot;emailAddresses.xlsx&quot;/&gt;
+    &lt;parameter name=&quot;dataSheet&quot; value=&quot;emailTC&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;scripts.emailUI&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;emailAddresses&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- scripts.emailUI --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- emailAddresses --&gt;
 &lt;/suite&gt; &lt;!-- FirstDemoSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -179,6 +224,9 @@
             <ul>
               <li>
                 <span class="test-name">FirstTesting (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">emailAddresses (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -204,20 +252,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'demoTestCase')
-data.setCell(0, 2, 'scripts.TestCaseClass')
-data.setCell(0, 3, 1276);
+data.setCell(0, 1, 'emailAddresses')
+data.setCell(0, 2, 'scripts.emailUI')
+data.setCell(0, 3, 5156);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'demoTestCase')
-data.setCell(1, 2, 'scripts.TestCaseClass')
-data.setCell(1, 3, 1225);
+data.setCell(1, 1, 'emailAddresses')
+data.setCell(1, 2, 'scripts.emailUI')
+data.setCell(1, 3, 4485);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'demoTestCase')
+data.setCell(2, 2, 'scripts.TestCaseClass')
+data.setCell(2, 3, 1216);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'demoTestCase')
+data.setCell(3, 2, 'scripts.TestCaseClass')
+data.setCell(3, 3, 1176);
 window.suiteTableData['FirstDemoSuite']= { tableData: data, tableDiv: 'times-div-FirstDemoSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 12 seconds</span>
               <div id="times-div-FirstDemoSuite">
               </div> <!-- times-div-FirstDemoSuite -->
             </div> <!-- times-div -->
@@ -252,46 +308,84 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">scripts.TestCaseClass</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">scripts.emailUI</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">beforeSuite(org.testng.TestRunner@5432c277)</span>
+                <span class="method-name">beforeSuite(org.testng.TestRunner@352c308)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">scripts.TestCaseClass</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">2334 ms</span>
+                <span class="method-start">2386 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethodClass</span>
-                <span class="method-start">3782 ms</span>
+                <span class="method-start">2912 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</span>
-                <span class="method-start">3782 ms</span>
+                <span class="method-start">2913 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close</span>
-                <span class="method-start">5076 ms</span>
+                <span class="method-start">4131 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethodClass</span>
-                <span class="method-start">5076 ms</span>
+                <span class="method-start">4132 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">demoTestCase({Key=Value2, user=admin1, pass=, page=EPM Servers})</span>
-                <span class="method-start">5076 ms</span>
+                <span class="method-start">4132 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close</span>
-                <span class="method-start">6304 ms</span>
+                <span class="method-start">5309 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">6306 ms</span>
+                <span class="method-start">5310 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">scripts.emailUI</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">5343 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodClass</span>
+                <span class="method-start">5345 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</span>
+                <span class="method-start">5345 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">close</span>
+                <span class="method-start">10502 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethodClass</span>
+                <span class="method-start">10503 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})</span>
+                <span class="method-start">10503 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">close</span>
+                <span class="method-start">14989 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">14989 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">6359 ms</span>
+                <span class="method-start">15019 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
