@@ -109,6 +109,26 @@ public class EPCommonFunction {
 				return false;
 			}
 		}
+		
+		
+		public void selectDropDownOption(WebElement element, String sItem)
+		{
+			log.info("---------------------------------------------------------------------------------------------------------------------------------------");
+			log.info("Entering into Method : " + Thread.currentThread().getStackTrace()[1].getMethodName());
+			Select selectedOption = new Select(element);
+			for (WebElement optionElement : selectedOption.getOptions())
+			{
+				//log.info(sItem+" "+optionElement.getText());
+				if (optionElement.getText().toLowerCase().contains(sItem.toLowerCase().replaceAll("\"", "")))
+				{
+					sItem = optionElement.getText();
+					log.info(sItem);
+					break;
+				}
+			}
+			selectedOption.selectByVisibleText(sItem);
+			log.info("---------------------------------------------------------------------------------------------------------------------------------------");
+		}
 
 	
 	//writing method

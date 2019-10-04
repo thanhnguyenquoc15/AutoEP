@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import lib.BrowserFactory;
@@ -12,7 +13,6 @@ import lib.ReadData;
 public class RolesPage {
 
 	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
-	protected EPCommonFunction ComFunc = PageFactory.initElements(driver, EPCommonFunction.class);
 	
 	protected Logger log = Logger.getLogger(this.getClass().getName());
 	// Page Objects
@@ -43,72 +43,132 @@ public class RolesPage {
 		return Button;
 	}
 	
-	//Element - choose descending order to role by name
-	WebElement nameDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Dsc\"]"));
-
-	//Element - choose ascending order to role by name
-	WebElement nameAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Asc\"]"));
-
-	//Element - choose descending order to role by type
-	WebElement typeDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:type_Dsc\"]"));
-
-	//Element - choose ascending order to role by name
-	WebElement typeAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:type_Asc\"]"));
-
-	//Element - check all roles
-	WebElement checkboxAllRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:allDeleted\"]"));
-
-	//Element - input name role when create a new role
-	WebElement inputNameRole = driver.findElement(By.xpath("//input[@id=\"role:roleName\"]"));
-
-	//Element - enable organization for role when create a new role
-	WebElement enableOrgRole = driver.findElement(By.xpath("//input[@id=\"role:orgEnable:0\"]"));
-
-	//Element - disable organization for role when create a new role
-	WebElement disableOrgRole = driver.findElement(By.xpath("//input[@id=\"role:orgEnable:1\"]"));
-
-	//Element - select organization for role when create a new role
-	WebElement selectOrgRole = driver.findElement(By.xpath("//select[@id=\"role:organizationSelect\"]"));
-
-	//Element - select system/organization password longevity for role when create a new role
-	WebElement sysPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:enforcePwdLongevity:0\"]"));
-
-	//Element - select custom password longevity for role when create a new role
-	WebElement cusPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:enforcePwdLongevity:1\"]"));
-
-	//Element - set days for custom password longevity for role when create a new role
-	WebElement dayPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:passwordLongevity\"]"));
-
-	//Element - select start with role for role when create a new role
-	WebElement startWithRole = driver.findElement(By.xpath("//select[@id=\"role:startWith\"]"));
-
-	//Element - expand all role when create a new role
-	WebElement expandLinkRole = driver.findElement(By.xpath("//a[@id=\"roleEdit:expandlink\"]"));
+	//method - choose descending order to role by name
+	public WebElement nameDscRole() {
+		WebElement nameDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Dsc\"]"));
+		return nameDscRole;
+	}
 	
-	//Element - collapse all role when create a new role
-	WebElement collapseLinkRole = driver.findElement(By.xpath("//a[@id=\"roleEdit:collapselink\"]"));
+	//method - choose ascending order to role by name
+	public WebElement nameAscRole() {
+		WebElement nameAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Asc\"]"));
+		return nameAscRole;
+	}
+	
+	//method - choose descending order to role by type
+	public WebElement typeDscRole() {
+		WebElement typeDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:type_Dsc\"]"));
+		return typeDscRole;
+	}	
 
-	//Element - assign system for role in change Password Longevity page
-	WebElement pwdLongevitySysRole = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:enforcePwdLongevity:0\"]"));
+	//method - choose ascending order to role by name
+	public WebElement typeAscRole() {
+		WebElement typeAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:type_Asc\"]"));
+		return typeAscRole;
+	}
+
+	//method - check all roles
+	public WebElement checkboxAllRole() {
+		WebElement checkboxAllRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:allDeleted\"]"));
+		return checkboxAllRole;
+	}
+
+	//method - input name role when create a new role
+	public WebElement inputNameRole() {
+		WebElement inputNameRole = driver.findElement(By.xpath("//input[@id=\"role:roleName\"]"));
+		return inputNameRole;
+	}
+
+	//method - enable organization for role when create a new role
+	public WebElement enableOrgRole() {
+		WebElement enableOrgRole = driver.findElement(By.xpath("//input[@id=\"role:orgEnable:0\"]"));
+		return enableOrgRole;
+	}
+
+	//method - disable organization for role when create a new role
+	public WebElement disableOrgRole() {
+		WebElement disableOrgRole = driver.findElement(By.xpath("//input[@id=\"role:orgEnable:1\"]"));
+		return disableOrgRole;
+	}
+
+	//method - select organization for role when create a new role
+	public WebElement selectOrgRole() {
+		WebElement selectOrgRole = driver.findElement(By.xpath("//select[@id=\"role:organizationSelect\"]"));
+		return selectOrgRole;
+	}
+
+	//method - select system/organization password longevity for role when create a new role
+	public WebElement sysPwdLongRole() {
+		WebElement sysPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:enforcePwdLongevity:0\"]"));
+		return sysPwdLongRole;
+	}
+
+	//method - select custom password longevity for role when create a new role
+	public WebElement cusPwdLongRole() {
+		WebElement cusPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:enforcePwdLongevity:1\"]"));
+		return cusPwdLongRole;
+	}
+
+	//method - set days for custom password longevity for role when create a new role
+	public WebElement dayPwdLongRole() {
+		WebElement dayPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:passwordLongevity\"]"));
+		return dayPwdLongRole;
+	}
+
+	//method - select start with role for role when create a new role
+	public WebElement startWithRole() {
+		WebElement startWithRole = driver.findElement(By.xpath("//select[@id=\"role:startWith\"]"));
+		return startWithRole;
+	}
+
+	//method - expand all role when create a new role
+	public WebElement expandLinkRole() {
+		WebElement expandLinkRole = driver.findElement(By.xpath("//a[@id=\"roleEdit:expandlink\"]"));
+		return expandLinkRole;
+	}
 	
-	//Element - assign custom for role in change Password Longevity page
-	WebElement pwdLongevityCusRole = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:enforcePwdLongevity:1\"]"));
+	//method - collapse all role when create a new role
+	public WebElement collapseLinkRole() {
+		WebElement collapseLinkRole = driver.findElement(By.xpath("//a[@id=\"roleEdit:collapselink\"]"));
+		return collapseLinkRole;
+	}
+
+	//method - assign system for role in change Password Longevity page
+	public WebElement pwdLongevitySysRole() {
+		WebElement pwdLongevitySysRole = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:enforcePwdLongevity:0\"]"));
+		return pwdLongevitySysRole;
+	}
 	
-	//Element - set days for role in change Password Longevity page
-	WebElement pwdLongevityRole = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:passwordLongevity\"]"));
+	//method - assign custom for role in change Password Longevity page
+	public WebElement pwdLongevityCusRole() {
+		WebElement pwdLongevityCusRole = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:enforcePwdLongevity:1\"]"));
+		return pwdLongevityCusRole;
+	}
+	
+	//method - set days for role in change Password Longevity page
+	public WebElement pwdLongevityRole() {
+		WebElement pwdLongevityRole = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:passwordLongevity\"]"));
+		return pwdLongevityRole;
+	}
+	
 
 	// Method to Delete Role
-	public void deleteRole(String nameRole) {
-		log.info("Detele Role");
-		checkboxRoleName(nameRole).click();
-		Button("Delete").click();
+	public void nameDscRole_test() {
+		log.debug("Entering into Method : " + Thread.currentThread().getStackTrace()[1].getMethodName());
+		try {
+			nameDscRole().click();
+			Thread.sleep(500);
+		
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}
 	}	
 	
 	// Method to Delete All Role
-	public void deleteAllRole() {
-		log.info("Detele All Role");
-		checkboxAllRole.click();
-		Button("Delete").click();
-	}	
+	/*
+	 * public void deleteAllRole() { log.info("Detele All Role");
+	 * checkboxAllRole.click(); Button("Delete").click(); }
+	 */	
 
 } 
