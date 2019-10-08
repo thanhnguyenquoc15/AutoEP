@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [FirstDemoSuite]">
-  <test thread-count="5" name="FirstTesting(failed)">
+  <test thread-count="5" name="emailAddresses(failed)">
     <parameter name="dataFile" value="SomeTestCases.xlsx"/>
     <parameter name="dataSheet" value="TestData"/>
     <classes>
-      <class name="testPackage.TestCaseClass">
+      <class name="scripts.emailUI">
         <methods>
-          <include name="demoTestCase" invocation-numbers="0 1"/>
           <include name="beforeClass"/>
-          <include name="afterSuite"/>
-          <include name="close"/>
           <include name="beforeMethodClass"/>
           <include name="afterClass"/>
+          <include name="close"/>
+          <include name="emailAddresses" invocation-numbers="0 1"/>
           <include name="beforeSuite"/>
+          <include name="afterSuite"/>
         </methods>
-      </class> <!-- testPackage.TestCaseClass -->
+      </class> <!-- scripts.emailUI -->
     </classes>
-  </test> <!-- FirstTesting(failed) -->
+  </test> <!-- emailAddresses(failed) -->
 </suite> <!-- Failed suite [FirstDemoSuite] -->

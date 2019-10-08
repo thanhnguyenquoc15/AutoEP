@@ -16,8 +16,8 @@
  </test>
  
 <test name="emailAddresses">
- 	 <parameter name="dataFile" value="emailAddresses.xlsx" />
- 	 <parameter name="dataSheet" value="emailTC"/>
+ 	 <parameter name="dataFile" value="SomeTestCases.xlsx" />
+ 	 <parameter name="dataSheet" value="TestData"/>
  	 <classes>
 	 	<class name="scripts.emailUI">
 	 		<methods>
