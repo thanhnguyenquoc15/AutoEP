@@ -9,20 +9,19 @@ import org.openqa.selenium.support.PageFactory;
 import frame.EPLoginPage;
 
 import org.testng.ITestContext;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 import lib.BrowserFactory;
 import lib.ReadData;
 
-public class HelperClass {
-	
+public abstract class HelperClass {
+		
 	protected Logger log = Logger.getLogger(this.getClass().getName());
 	
+    public abstract void performBeforeMethodOperation();
+    public abstract void performAfterMethodOperation();
+ 
+
 	public static WebDriver driver;
 	
 	@BeforeSuite
@@ -45,10 +44,22 @@ public class HelperClass {
 	log.info("in @BeforeClass");
 	}
 	 
-	@BeforeMethod
+	@BeforeMethod (alwaysRun = true)
 	public void beforeMethodClass(){
 	log.info("in @BeforeMethod");
-	 
+	performBeforeMethodOperation();
+//	@BeforeMethod (alwaysRun = true)
+//    public void appState () {
+        //Web driver initialization
+//    POMCommonFunctionObj = new POMCommonFunction();
+//    POMRestMethodsObj= new POMRestMethods();
+//        EnvSetup.setupBrowserInstance(true);
+//		EPLoginPage = PageFactory.initElements(EnvSetup.WEBDRIVER, EPLoginPage.class);
+//        EPLoginPage.appState();
+
+
+
+//    }
 	}
 	 
 	@AfterMethod

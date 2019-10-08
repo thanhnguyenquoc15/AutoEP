@@ -1,5 +1,6 @@
 package frame;
 
+import org.apache.commons.math3.analysis.function.Log;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,15 +10,28 @@ import org.openqa.selenium.support.PageFactory;
 
 import lib.BrowserFactory;
 import lib.ReadData;
+import scripts.HelperClass;
 import frame.RolesPage;
 
 public class RolesPage {
 
-	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
+//	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
+	WebDriver driver = HelperClass.driver;
+//	driver = this.driver;
+//	 
+//	PageFactory.initElements(driver, this);
+	
+//	protected BrowserFactory BrowserFactory = PageFactory.initElements(driver, BrowserFactory.class);
 	protected EPCommonFunction ComFunc = PageFactory.initElements(driver, EPCommonFunction.class);
+	
 	
 	protected Logger log = Logger.getLogger(this.getClass().getName());
 	// Page Objects
+//	@FindBy(xpath="//a[text()='Admin']")
+//	public WebElement roleName;
+
+	
+//	WebElement nameDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Dsc\"]"));
 	
 	//method to choose roles
 	public WebElement roleName(String rName) {
@@ -46,6 +60,8 @@ public class RolesPage {
 		WebElement nameDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Dsc\"]"));
 		return nameDscRole;
 	}
+	
+	
 	//method to choose ascending order to role by name
 	public WebElement nameAscRole() {
 		WebElement nameAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Asc\"]"));

@@ -4,19 +4,28 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
-import lib.BrowserFactory;
-import lib.ReadData;
+import scripts.HelperClass;
 
 public class UsersPage {
-	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
+	
+	
+//	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
+//	WebDriver driver = HelperClass.driver;
+	
 	protected Logger log = Logger.getLogger(this.getClass().getName());
        //method to select User
+	WebDriver driver = HelperClass.driver;
+	protected EPCommonFunction ComFunc = PageFactory.initElements(driver, EPCommonFunction.class);
+	
+//	private WebElement searchKeys = driver.findElement(By.xpath("//input[@id=\"auditLogViewerForm:auditkeywords\"]"));
+	
 	  public WebElement userName(String uName) {
 		WebElement userName = driver.findElement(By.xpath("//a[text()=\"" + uName + "\"]"));
 		return userName;
 		}
-	
+	 
        //method to choose check box Dynamic
 	  public WebElement checkBoxUserName(String uName) {
 			WebElement checkBoxUserName = driver.findElement(By.xpath("//a[text()=\"" + uName + "\"]/../..//input[@type=\"checkbox\"]"));

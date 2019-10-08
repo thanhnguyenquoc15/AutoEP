@@ -5,9 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import lib.BrowserFactory;
 import lib.ReadData;
+import scripts.HelperClass;
 		
 
 public class EPCommonFunction {
@@ -20,7 +22,7 @@ public class EPCommonFunction {
 	protected Logger log = Logger.getLogger(this.getClass().getName());
 	
 	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
-	
+//	WebDriver driver = HelperClass.driver;
 	// select the page to handle from EPM Menu Bar	
 		public void switchEPMenu(String page) {
 			log.debug("Entering into Method : " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -46,5 +48,28 @@ public class EPCommonFunction {
 			
 		}
 	
+		/* 
+		 * @author: tqnguyen@avaya.com
+		 * @last modified date:
+		 * @desc opens a modal window to display a message
+		 * @param box: the selected box
+		 * @param attribute: the attribute that would be selected in the box
+		 * @return bool - success or failure
+		 */
+			public  void selectMultiElementsBox(WebElement box,String attribute) {
+				try
+				{
+					Select select = new Select(box);
+					select.deselectAll();
+//					select.selectByValue(attribute);
+					select.selectByVisibleText(attribute);
+				}
+				catch(Exception e)
+				{
+					log.info("fail to select "+ attribute);
+				}
+				
+			}
+		
 	//writing method 2
 }
