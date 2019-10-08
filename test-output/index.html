@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-FirstDemoSuite">
-              <span class="suite-name border-failed">FirstDemoSuite</span>
+              <span class="suite-name border-passed">FirstDemoSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,26 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-FirstDemoSuite" class="hide-methods failed suite-FirstDemoSuite"> (hide)</a> <!-- hide-methods failed suite-FirstDemoSuite -->
-                      <a href="#" panel-name="suite-FirstDemoSuite" class="show-methods failed suite-FirstDemoSuite"> (show)</a> <!-- show-methods failed suite-FirstDemoSuite -->
-                    </span>
-                    <div class="method-list-content failed suite-FirstDemoSuite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-FirstDemoSuite" title="scripts.emailUI" hash-for-method="emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-FirstDemoSuite" title="scripts.emailUI" hash-for-method="emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})">emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-FirstDemoSuite -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -129,6 +110,16 @@
                         <a href="#" class="method navigator-link" panel-name="suite-FirstDemoSuite" title="scripts.TestCaseClass" hash-for-method="demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-FirstDemoSuite" title="scripts.emailUI" hash-for-method="emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-FirstDemoSuite" title="scripts.emailUI" hash-for-method="emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})">emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-FirstDemoSuite -->
                   </li>
                 </ul>
@@ -141,76 +132,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-FirstDemoSuite" class="panel FirstDemoSuite">
-          <div class="suite-FirstDemoSuite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">scripts.emailUI</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">
-                  </a> <!-- emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers}) -->
-                  <span class="method-name">emailAddresses</span>
-                  <span class="parameters">({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;alarmDeliveryConfigForm:displayNameGroup10&apos;]&quot;}
-  (Session info: chrome=77.0.3865.90)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;NQTHANH1&apos;, ip: &apos;10.107.1.190&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\nqthanh1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 6585a5ea78fa82e40fbcb43dd62dc36f
-*** Element info: {Using=xpath, value=//*[@id=&apos;alarmDeliveryConfigForm:displayNameGroup10&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at frame.EPMServersPage.configAlarmDelivery(EPMServersPage.java:48)
-	at scripts.emailUI.emailAddresses(emailUI.java:62)
-... Removed 29 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})">
-                  </a> <!-- emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers}) -->
-                  <span class="method-name">emailAddresses</span>
-                  <span class="parameters">({Key=Value2, user=admin1, pass=, page=EPM Servers})</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;alarmDeliveryConfigForm:displayNameGroup10&apos;]&quot;}
-  (Session info: chrome=77.0.3865.90)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;NQTHANH1&apos;, ip: &apos;10.107.1.190&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\nqthanh1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 6585a5ea78fa82e40fbcb43dd62dc36f
-*** Element info: {Using=xpath, value=//*[@id=&apos;alarmDeliveryConfigForm:displayNameGroup10&apos;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at frame.EPMServersPage.configAlarmDelivery(EPMServersPage.java:48)
-	at scripts.emailUI.emailAddresses(emailUI.java:62)
-... Removed 29 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-FirstDemoSuite-class-failed -->
           <div class="suite-FirstDemoSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -231,6 +152,30 @@ Session ID: 6585a5ea78fa82e40fbcb43dd62dc36f
                   </a> <!-- demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers}) -->
                   <span class="method-name">demoTestCase</span>
                   <span class="parameters">({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-FirstDemoSuite-class-passed -->
+          <div class="suite-FirstDemoSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">scripts.emailUI</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})">
+                  </a> <!-- emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers}) -->
+                  <span class="method-name">emailAddresses</span>
+                  <span class="parameters">({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})">
+                  </a> <!-- emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers}) -->
+                  <span class="method-name">emailAddresses</span>
+                  <span class="parameters">({Key=Value2, user=admin1, pass=, page=EPM Servers})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -311,24 +256,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'emailAddresses')
 data.setCell(0, 2, 'scripts.emailUI')
-data.setCell(0, 3, 8623);
+data.setCell(0, 3, 6785);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'emailAddresses')
 data.setCell(1, 2, 'scripts.emailUI')
-data.setCell(1, 3, 8239);
+data.setCell(1, 3, 6665);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'demoTestCase')
 data.setCell(2, 2, 'scripts.TestCaseClass')
-data.setCell(2, 3, 1293);
+data.setCell(2, 3, 1296);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'demoTestCase')
 data.setCell(3, 2, 'scripts.TestCaseClass')
-data.setCell(3, 3, 1286);
+data.setCell(3, 3, 1236);
 window.suiteTableData['FirstDemoSuite']= { tableData: data, tableDiv: 'times-div-FirstDemoSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 15 seconds</span>
               <div id="times-div-FirstDemoSuite">
               </div> <!-- times-div-FirstDemoSuite -->
             </div> <!-- times-div -->
@@ -365,7 +310,7 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">scripts.emailUI</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">beforeSuite(org.testng.TestRunner@660e9100)</span>
+                <span class="method-name">beforeSuite(org.testng.TestRunner@378bd86d)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
@@ -373,78 +318,74 @@ return data;
               <div class="chronological-class-name">scripts.TestCaseClass</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">11614 ms</span>
+                <span class="method-start">12484 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethodClass</span>
-                <span class="method-start">12091 ms</span>
+                <span class="method-start">12912 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">demoTestCase({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</span>
-                <span class="method-start">12095 ms</span>
+                <span class="method-start">12916 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close</span>
-                <span class="method-start">13390 ms</span>
+                <span class="method-start">14155 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethodClass</span>
-                <span class="method-start">13391 ms</span>
+                <span class="method-start">14155 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">demoTestCase({Key=Value2, user=admin1, pass=, page=EPM Servers})</span>
-                <span class="method-start">13391 ms</span>
+                <span class="method-start">14156 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close</span>
-                <span class="method-start">14680 ms</span>
+                <span class="method-start">15454 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">14681 ms</span>
+                <span class="method-start">15455 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">scripts.emailUI</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">14730 ms</span>
+                <span class="method-start">15500 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethodClass</span>
-                <span class="method-start">14731 ms</span>
+                <span class="method-start">15501 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">emailAddresses({Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers})</span>
-                <span class="method-start">14734 ms</span>
+                <span class="method-start">15503 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close</span>
-                <span class="method-start">23360 ms</span>
+                <span class="method-start">22289 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethodClass</span>
-                <span class="method-start">23361 ms</span>
+                <span class="method-start">22290 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">emailAddresses({Key=Value2, user=admin1, pass=, page=EPM Servers})</span>
-                <span class="method-start">23364 ms</span>
+                <span class="method-start">22290 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close</span>
-                <span class="method-start">31606 ms</span>
+                <span class="method-start">28955 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">31606 ms</span>
+                <span class="method-start">28955 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">31661 ms</span>
+                <span class="method-start">28977 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
