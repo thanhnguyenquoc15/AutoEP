@@ -19,9 +19,10 @@ import org.testng.annotations.BeforeSuite;
 import lib.BrowserFactory;
 import lib.ReadData;
 
-public class HelperClass {
+public abstract class HelperClass {
 	
 	protected Logger log = Logger.getLogger(this.getClass().getName());
+	public  abstract void performBeforeMethodOperation();
 	
 	public static WebDriver driver;
 	
@@ -48,7 +49,7 @@ public class HelperClass {
 	@BeforeMethod
 	public void beforeMethodClass(){
 	log.info("in @BeforeMethod");
-	 
+	performBeforeMethodOperation();
 	}
 	 
 	@AfterMethod

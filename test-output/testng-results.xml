@@ -1,74 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
+<testng-results skipped="1" failed="0" ignored="3" total="4" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="FirstDemoSuite" duration-ms="3993" started-at="2019-09-30T02:51:11Z" finished-at="2019-09-30T02:51:15Z">
+  <suite name="regression" duration-ms="6513" started-at="2019-10-10T02:47:14Z" finished-at="2019-10-10T02:47:20Z">
     <groups>
     </groups>
-    <test name="FirstTesting" duration-ms="3993" started-at="2019-09-30T02:51:11Z" finished-at="2019-09-30T02:51:15Z">
+    <test name="FirstTesting" duration-ms="6513" started-at="2019-10-10T02:47:14Z" finished-at="2019-10-10T02:47:20Z">
       <class name="scripts.TestCaseClass">
-        <test-method status="PASS" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:scripts.TestCaseClass@724f138e]" name="beforeSuite" is-config="true" duration-ms="2315" started-at="2019-09-30T02:51:09Z" finished-at="2019-09-30T02:51:11Z">
+        <test-method status="PASS" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:scripts.TestCaseClass@5abca1e0]" name="beforeSuite" is-config="true" duration-ms="10179" started-at="2019-10-10T02:47:04Z" finished-at="2019-10-10T02:47:14Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5432c277]]>
+                <![CDATA[org.testng.TestRunner@338494fa]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="beforeClass" is-config="true" duration-ms="2" started-at="2019-09-30T02:51:11Z" finished-at="2019-09-30T02:51:11Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:scripts.TestCaseClass@5abca1e0]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-10-10T02:47:14Z" finished-at="2019-10-10T02:47:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="demoTestCase(java.util.Hashtable)[pri:0, instance:scripts.TestCaseClass@724f138e]" name="demoTestCase" duration-ms="1276" started-at="2019-09-30T02:51:13Z" data-provider="dataMap" finished-at="2019-09-30T02:51:14Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Key=Value, user=admin, pass=1_Abc_123, page=MPP Servers}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- demoTestCase -->
-        <test-method status="PASS" signature="beforeMethodClass()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="beforeMethodClass" is-config="true" duration-ms="0" started-at="2019-09-30T02:51:13Z" finished-at="2019-09-30T02:51:13Z">
+        <test-method status="FAIL" signature="beforeMethodClass()[pri:0, instance:scripts.TestCaseClass@5abca1e0]" name="beforeMethodClass" is-config="true" duration-ms="5063" started-at="2019-10-10T02:47:15Z" finished-at="2019-10-10T02:47:20Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="snmpAgent:snmpVersion3SecurityNameInputText"]"}
+  (Session info: chrome=77.0.3865.90)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LNKHANG1-PC', ip: '10.30.4.220', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\lnkhang1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55658}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 27506f3c7bde9d9f5031075a6f079ebe
+*** Element info: {Using=xpath, value=//input[@id="snmpAgent:snmpVersion3SecurityNameInputText"]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="snmpAgent:snmpVersion3SecurityNameInputText"]"}
+  (Session info: chrome=77.0.3865.90)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LNKHANG1-PC', ip: '10.30.4.220', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\lnkhang1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55658}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 27506f3c7bde9d9f5031075a6f079ebe
+*** Element info: {Using=xpath, value=//input[@id="snmpAgent:snmpVersion3SecurityNameInputText"]}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at frame.SNMPPage.<init>(SNMPPage.java:46)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at java.lang.Class.newInstance(Unknown Source)
+at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)
+at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+at scripts.TestCaseClass.performBeforeMethodOperation(TestCaseClass.java:36)
+at scripts.HelperClass.beforeMethodClass(HelperClass.java:52)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethodClass -->
-        <test-method status="PASS" signature="demoTestCase(java.util.Hashtable)[pri:0, instance:scripts.TestCaseClass@724f138e]" name="demoTestCase" duration-ms="1225" started-at="2019-09-30T02:51:14Z" data-provider="dataMap" finished-at="2019-09-30T02:51:15Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Key=Value2, user=admin1, pass=, page=EPM Servers}]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="setSNMPv3(java.util.Hashtable)[pri:0, instance:scripts.TestCaseClass@5abca1e0]" name="setSNMPv3" duration-ms="0" started-at="2019-10-10T02:47:20Z" data-provider="dataMap" finished-at="2019-10-10T02:47:20Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="snmpAgent:snmpVersion3SecurityNameInputText"]"}
+  (Session info: chrome=77.0.3865.90)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LNKHANG1-PC', ip: '10.30.4.220', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\lnkhang1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55658}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 27506f3c7bde9d9f5031075a6f079ebe
+*** Element info: {Using=xpath, value=//input[@id="snmpAgent:snmpVersion3SecurityNameInputText"]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id="snmpAgent:snmpVersion3SecurityNameInputText"]"}
+  (Session info: chrome=77.0.3865.90)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LNKHANG1-PC', ip: '10.30.4.220', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\lnkhang1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55658}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 27506f3c7bde9d9f5031075a6f079ebe
+*** Element info: {Using=xpath, value=//input[@id="snmpAgent:snmpVersion3SecurityNameInputText"]}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at frame.SNMPPage.<init>(SNMPPage.java:46)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at java.lang.Class.newInstance(Unknown Source)
+at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)
+at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:64)
+at scripts.TestCaseClass.performBeforeMethodOperation(TestCaseClass.java:36)
+at scripts.HelperClass.beforeMethodClass(HelperClass.java:52)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- demoTestCase -->
-        <test-method status="PASS" signature="beforeMethodClass()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="beforeMethodClass" is-config="true" duration-ms="0" started-at="2019-09-30T02:51:14Z" finished-at="2019-09-30T02:51:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethodClass -->
-        <test-method status="PASS" signature="close()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="close" is-config="true" duration-ms="0" started-at="2019-09-30T02:51:14Z" finished-at="2019-09-30T02:51:14Z">
+        </test-method> <!-- setSNMPv3 -->
+        <test-method status="SKIP" signature="close()[pri:0, instance:scripts.TestCaseClass@5abca1e0]" name="close" is-config="true" duration-ms="0" started-at="2019-10-10T02:47:20Z" finished-at="2019-10-10T02:47:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-        <test-method status="PASS" signature="close()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="close" is-config="true" duration-ms="2" started-at="2019-09-30T02:51:15Z" finished-at="2019-09-30T02:51:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-09-30T02:51:15Z" finished-at="2019-09-30T02:51:15Z">
+        <test-method status="SKIP" signature="afterClass()[pri:0, instance:scripts.TestCaseClass@5abca1e0]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-10T02:47:20Z" finished-at="2019-10-10T02:47:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:scripts.TestCaseClass@724f138e]" name="afterSuite" is-config="true" duration-ms="823" started-at="2019-09-30T02:51:15Z" finished-at="2019-09-30T02:51:16Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:scripts.TestCaseClass@5abca1e0]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-10-10T02:47:21Z" finished-at="2019-10-10T02:47:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- scripts.TestCaseClass -->
     </test> <!-- FirstTesting -->
-  </suite> <!-- FirstDemoSuite -->
+  </suite> <!-- regression -->
 </testng-results>

@@ -152,12 +152,11 @@ public class SSHCommand extends ReadData
 					if (iExitStatus == 0)
 					{
 						log.info("Execute successfully for command: " + sCommand);
-						log.info("Execute successfully for command: " + sCommand);
+						
 					} else
 					{
 						log.info("Execution failed while executing command: " + sCommand);
-						log.info("Execution failed while executing command: " + sCommand);
-						log.info("Error message: " + ((ChannelExec) channel).getErrStream());
+						
 						log.info("Error message: " + ((ChannelExec) channel).getErrStream());
 					}
 					break;
@@ -274,12 +273,11 @@ public class SSHCommand extends ReadData
 					if (iExitStatus == 0)
 					{
 						log.info("Execute successfully for command: " + sCommand);
-						log.info("Execute successfully for command: " + sCommand);
+	
 					} else
 					{
 						log.info("Execution failed while executing command: " + sCommand);
-						log.info("Execution failed while executing command: " + sCommand);
-						log.info("Error message: " + ((ChannelExec) channel).getErrStream());
+
 						log.info("Error message: " + ((ChannelExec) channel).getErrStream());
 					}
 					break;

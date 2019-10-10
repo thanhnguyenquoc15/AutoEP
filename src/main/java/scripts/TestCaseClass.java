@@ -18,13 +18,23 @@ import lib.ReadData;
 
 public class TestCaseClass extends HelperClass {
 	
-	protected EPLoginPage loginPage = PageFactory.initElements(driver, EPLoginPage.class);
-	protected RolesPage rolePageObj = PageFactory.initElements(driver, RolesPage.class);
-	protected EPCommonFunction ComFuncObj = PageFactory.initElements(driver, EPCommonFunction.class);
-	protected UsersPage userPageObj = PageFactory.initElements(driver, UsersPage.class);
-	//protected SNMPPage snmpPageObj = PageFactory.initElements(driver, SNMPPage.class);
+	protected EPLoginPage loginPageObj ;
+	protected RolesPage rolePageObj ;
+	protected EPCommonFunction ComFuncObj ;
+	protected UsersPage userPageObj ;
+	protected SNMPPage snmpPageObj ;
 	protected Logger log = Logger.getLogger(this.getClass().getName());
-	SNMPPage snmpObj = new SNMPPage();
+	
+	
+	@Override
+	public void performBeforeMethodOperation() {
+		// TODO Auto-generated method stub
+		loginPageObj = PageFactory.initElements(driver, EPLoginPage.class);
+		rolePageObj = PageFactory.initElements(driver, RolesPage.class);
+		ComFuncObj = PageFactory.initElements(driver, EPCommonFunction.class);
+		userPageObj = PageFactory.initElements(driver, UsersPage.class);
+		snmpPageObj = PageFactory.initElements(driver, SNMPPage.class);
+	}
 	
 	@Test
 	(dataProvider = "dataMap", dataProviderClass = ReadData.class)
@@ -77,16 +87,15 @@ public class TestCaseClass extends HelperClass {
     													  IOException 
 	{
 		log.info("SNMP Page ");
-		ComFuncObj.switchEPMenu("SNMP");
-		ComFuncObj.switchFrame("main");
-        
-		snmpObj.set_SNMP_Agent_Settings_Version3(testData.get("securityName").toString(),
-				testData.get("authPro").toString(),"","","");
+		snmpPageObj.SNMP_authPriv(testData.get("securityName").toString(),
+							  testData.get("authPro").toString(),
+							  testData.get("authPass").toString(),
+							  testData.get("privPro").toString(),
+							  testData.get("privPass").toString(),
+							  testData.get("SNMPserver").toString(),
+							  testData.get("SNMPuser").toString(),
+							  testData.get("SNMPpass").toString());
 	}
-	
 
-	}
-	
-	
-	
 
+}

@@ -79,16 +79,10 @@ public class RolesPage {
 		return inputNameRole;
 	}
 
-	//method - enable organization for role when create a new role
-	public WebElement enableOrgRole() {
-		WebElement enableOrgRole = driver.findElement(By.xpath("//input[@id=\"role:orgEnable:0\"]"));
+	//method - enable organization for role when create a new role Yes/No
+	public WebElement enableOrgRole(String value) {
+		WebElement enableOrgRole = driver.findElement(By.xpath("//input[@value=\"" + value + "\"]"));
 		return enableOrgRole;
-	}
-
-	//method - disable organization for role when create a new role
-	public WebElement disableOrgRole() {
-		WebElement disableOrgRole = driver.findElement(By.xpath("//input[@id=\"role:orgEnable:1\"]"));
-		return disableOrgRole;
 	}
 
 	//method - select organization for role when create a new role
