@@ -75,9 +75,8 @@ public class TestCaseClass extends HelperClass {
 		log.info("roles: ");
 		ComFuncObj.switchEPMenu("Users");
 		ComFuncObj.switchFrame("main");
-        
-		userPageObj.add_new_user(testData.get("uName").toString(),"",
-				testData.get("Role").toString(),"","","");
+       	userPageObj.add_new_user(testData.get("uName").toString(),"",
+       							 testData.get("Role").toString(),"","","");
 	}
 	
 	@Test
@@ -96,6 +95,4 @@ public class TestCaseClass extends HelperClass {
 							  testData.get("SNMPuser").toString(),
 							  testData.get("SNMPpass").toString());
 	}
-
-
 }

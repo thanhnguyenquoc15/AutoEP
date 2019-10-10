@@ -1,16 +1,16 @@
 package lib;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Date;
+import java.util.Properties;
+
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.UserInfo;
-
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.*;
 
 /**
  * This generic class is used to create SSH session with unix server and executes command.
@@ -296,5 +296,6 @@ public class SSHCommand extends ReadData
 		{
 		}
 		return sRetVal;
+
 	}
 }

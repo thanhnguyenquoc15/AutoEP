@@ -24,6 +24,7 @@ public class ReadData {
 	private static XSSFWorkbook workbook;
 	private static XSSFSheet sheet;
 	
+
 	public static final String userDir = System.getProperty("user.dir");
 	public static final String testDataDir = "\\src\\main\\java\\data\\";
 	
@@ -40,10 +41,12 @@ public class ReadData {
 	public static final String EPPass = readPropertyValue("EPPass");
 	
 	public static final String BROWSER = readPropertyValue("BROWSER");
+
+	//SSH detail 
 	
-	// SSH Detail
 	public static final String EPUser_SSH = readPropertyValue("EPUser_SSH");
 	public static final String EPPass_SSH = readPropertyValue("EPPass_SSH");
+
 	
 	public static void loadExcelFile(String fileName, String sheetName) throws IOException
 	{		
