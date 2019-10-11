@@ -45,13 +45,9 @@ public class SSHCommands {
 	/**
 	 * Connect to remote machine and send 1 command only then exit.
 	 *
-	 * @return 
+	 * @return console log
 	 */
-	public void sshConnect(	
-//							String user, 
-//							String password, 
-//							String host, 
-							String command) throws JSchException, InterruptedException, IOException {
+	public void sshConnectExec(String command) throws JSchException, InterruptedException, IOException {
 		java.util.Properties config = new java.util.Properties();
 		config.put("StrictHostKeyChecking", "no");
 		JSch jsch = new JSch();
@@ -95,12 +91,20 @@ public class SSHCommands {
 //	    }
 //	    return session;
 //	}
+	
 	/**
-	 * Connect to remote machine and send multiple commands then exit.
-	 * @input multiple commands to send to server
-	 * @return console log
+	 * sshConnectShell connect to remote machine and send multiple commands then exit.
+	 * @return console log, result of the sent commands 
+	 * @author nqthanh1 
+	 * @param single or multiple commands to send to Linux server
+	 * @LastModifiedDate 11-Octorber-2019
+	 * @LastModifiedBy nqthanh1
 	 */	
+	public int iExitStatus;
 	public void sshConnectShell(String... commands) throws Exception {
+		
+		log.info("---------------------------------------------------------------------------------------------------------------------------------------");
+		log.debug("Entering into Method : " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		java.util.Properties config = new java.util.Properties();
 		config.put("StrictHostKeyChecking", "no");
 		JSch jsch = new JSch();
@@ -112,50 +116,106 @@ public class SSHCommands {
 		Thread.sleep(2000);
 		log.info("SSH connection established");
 		Channel channel = session.openChannel("shell");
-
 		OutputStream out = channel.getOutputStream();
 		PrintStream ps = new PrintStream(out, true);
 		// open channel
 		channel.connect();
 		InputStream input = channel.getInputStream();
-
 		for (String command : commands) {
 			ps.print(command + "\n");
-			log.info("Start to run command: " + command);
+			Thread.sleep(500);	
+			printResult(input, channel);
 		}
 		ps.close();
-
-		// print Result
-		printResult(input, channel);
-
-//		String result = CharStreams.toString(new InputStreamReader(input));
-//		log.info(result);
+//		if (channel.isClosed()) {
+//		log.info("Connection channel closed");
+//		log.info("Check if exec success or not ... ");
+//		iExitStatus = channel.getExitStatus();
+//		if (iExitStatus == 0) {
+//			log.info("Execute successfully for command");
+//		} else {
+//			log.info("Execution failed while executing command");
+//			break;
+//		}
+//		break;
+//	}
 		channel.disconnect();
+		log.info("Connection channel closed");
 		session.disconnect();
+		log.info("Connection session closed");
 	}
-
-	public int iExitStatus;
 	/**
+	 * sshConnectShell connect to remote machine and send multiple commands then exit.
+	 * @return console log, result of the sent commands 
+	 * @author nqthanh1
+	 * @param host host's IP of Linux server to connect 
+	 * @param OSuser OS user to connect to Linux server
+	 * @param OSpass password to connect to Linux server
+	 * @param commands single or multiple commands to send to Linux server
+	 * @LastModifiedDate 11-Octorber-2019
+	 * @LastModifiedBy nqthanh1
+	 */	
+	public void sshConnectShell(String host, String OSuser,String OSpass,String... commands) throws Exception {
+		
+		log.info("---------------------------------------------------------------------------------------------------------------------------------------");
+		log.debug("Entering into Method : " + Thread.currentThread().getStackTrace()[1].getMethodName());
+		java.util.Properties config = new java.util.Properties();
+		config.put("StrictHostKeyChecking", "no");
+		JSch jsch = new JSch();
+		Session session = jsch.getSession(OSuser, host, 22);
+		log.info("SSHExec trying to connect " + OSuser + "@" + host);
+		session.setPassword(OSpass);
+		session.setConfig(config);
+		session.connect();
+		Thread.sleep(2000);
+		log.info("SSH connection established");
+		Channel channel = session.openChannel("shell");
+		OutputStream out = channel.getOutputStream();
+		PrintStream ps = new PrintStream(out, true);
+		// open channel
+		channel.connect();
+		InputStream input = channel.getInputStream();
+		for (String command : commands) {
+			ps.print(command + "\n");
+			Thread.sleep(500);	
+			printResult(input, channel);
+		}
+		ps.close();
+//		if (channel.isClosed()) {
+//		log.info("Connection channel closed");
+//		log.info("Check if exec success or not ... ");
+//		iExitStatus = channel.getExitStatus();
+//		if (iExitStatus == 0) {
+//			log.info("Execute successfully for command");
+//		} else {
+//			log.info("Execution failed while executing command");
+//			break;
+//		}
+//		break;
+//	}
+		channel.disconnect();
+		log.info("Connection channel closed");
+		session.disconnect();
+		log.info("Connection session closed");
+	}
+	/**
+	 * DESC: put in InputStream of the Channel to print out the console log of the SSH session
 	 * @param input
 	 * @param channel
 	 */
 	private void printResult(InputStream input, Channel channel) throws Exception {
 
-//		InputStream in = channel.getInputStream();
-//		String result = CharStreams.toString(new InputStreamReader(input));
-//		log.info(result);
-		
 		Date startDate = new Date();
-		int timeout = 10;
+		int timeout = 80;
 		StringBuilder sb = new StringBuilder();
 		int SIZE = 1024;
 		byte[] tmp = new byte[SIZE];
-		while (true) {
+		while (input.available() != 0) {
 			while (input.available() > 0) {
 				Date endDate = new Date();
 				long difference = (endDate.getTime() - startDate.getTime()) / 1000;
 				int i = input.read(tmp, 0, SIZE);
-				if (i < 0)
+				if (i <= 0)
 					break;
 				String str = (new String(tmp, 0, i));
 				sb.append(str);
@@ -165,18 +225,18 @@ public class SSHCommands {
 					break;
 				}
 			}
-			if (channel.isClosed()) {
-				log.info("Connection channel closed");
-				log.info("Check if exec success or not ... ");
-				iExitStatus = channel.getExitStatus();
-				if (iExitStatus == 0) {
-					log.info("Execute successfully for command");
-				} else {
-					log.info("Execution failed while executing command");
-					log.info("Error message: " + ((ChannelExec) channel).getErrStream());
-				}
-				break;
-			}
+//			if (channel.isClosed()) {
+//				log.info("Connection channel closed");
+//				log.info("Check if exec success or not ... ");
+//				iExitStatus = channel.getExitStatus();
+//				if (iExitStatus == 0) {
+//					log.info("Execute successfully for command");
+//				} else {
+//					log.info("Execution failed while executing command");
+//					break;
+//				}
+//				break;
+//			}
 			Date endDate = new Date();
 			long difference = (endDate.getTime() - startDate.getTime()) / 1000;
 			if (difference >= timeout) {
