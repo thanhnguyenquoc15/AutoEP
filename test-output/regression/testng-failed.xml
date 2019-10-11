@@ -8,7 +8,7 @@
       <class name="scripts.TestCaseClass">
         <methods>
           <include name="beforeClass"/>
-          <include name="setSNMPv3"/>
+          <include name="setSNMPv3" invocation-numbers="0"/>
           <include name="beforeMethodClass"/>
           <include name="afterClass"/>
           <include name="close"/>

@@ -5,16 +5,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.jcraft.jsch.JSchException;
+import com.jcraft.jsch.SftpException;
 
 import lib.BrowserFactory;
 import lib.ReadData;
-import lib.SSHCommand;
+import lib.SSHCommands;
 
 public class SNMPPage {
 
 	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
 	protected EPCommonFunction ComFuncObj = PageFactory.initElements(driver, EPCommonFunction.class);
-	protected SSHCommand sshObj = PageFactory.initElements(driver, SSHCommand.class);
+	protected SSHCommands sshObj = PageFactory.initElements(driver, SSHCommands.class);
+	//protected test testObj = PageFactory.initElements(driver, test.class);
 
 	protected Logger log = Logger.getLogger(this.getClass().getName());
 	// Page Objects
@@ -214,7 +219,7 @@ public class SNMPPage {
 	
 	// method to set SNMP Agent Settings
 	public void SNMP_authPriv(String securityName, String authPro, String authPass, String privPro, String privPass,
-							  String SNMPserver, String SNMPuser, String SNMPpass) {
+							  String SNMPserver, String SNMPuser, String SNMPpass) throws Exception {
 		String auth_Pro[] = authPro.split("\\|");
 		String priv_Pro[] = privPro.split("\\|");
 		for (int i = 0; i < auth_Pro.length; i++) {
@@ -252,33 +257,32 @@ public class SNMPPage {
 				Button("Save").click();
 
 				log.info("Restart avpSNMPAgentSvc");
-				sshObj.connect(ReadData.EPServer, ReadData.EPUser_SSH, ReadData.EPPass_SSH);
 				String restartSNMP = "service avpSNMPAgentSvc restart";
-				sshObj.exec(restartSNMP);
-				ComFuncObj.wait(3);
-				sshObj.disconnect();
+				sshObj.sshConnectExec(restartSNMP);
 				ComFuncObj.wait(1);
 
 				log.info("Login external SNMP server");
-				sshObj.connect(SNMPserver, SNMPuser, SNMPpass);
 				String cmd = "cd /opt/Avaya/ExperiencePortal/VPMS/SNMP/";
 				String pwd = "pwd";
 				String get = "bash SendSNMPRequest -h " + ReadData.EPServer + " -v 3 -c " + securityName + " -t GET -T " + auth_Pro[i] + " -A " + authPass + " -R " + priv_Pro[j] + " -P " + privPass;
 				String getnext = "bash SendSNMPRequest -h " + ReadData.EPServer + " -v 3 -c " + securityName + " -t GETNEXT -T " + auth_Pro[i] + " -A " + authPass + " -R " + priv_Pro[j] + " -P " + privPass;
-				sshObj.exec(pwd);
-				ComFuncObj.wait(1);
 				log.info("Negative SNMP");
-				sshObj.exec(cmd);
-				//ComFuncObj.wait(1);
-				sshObj.exec(pwd);
 				log.info("Execute SNMP get and getnext");
-				sshObj.exec(get);
-				ComFuncObj.wait(3);
-				sshObj.exec(getnext);
-				ComFuncObj.wait(3);
-				sshObj.disconnect();
+				//sshObj.sshConnectShell(cmd,pwd,get,getnext);
+				sshObj.sshOtherConnect(SNMPserver,SNMPuser,SNMPpass,cmd,pwd,get,getnext);
 				ComFuncObj.wait(1);
+				//sshObj.exec(cmd);
+				//ComFuncObj.wait(1);
+				//sshObj.connectSftp().pwd();
+				//log.info("Execute SNMP get and getnext");
+				//sshObj.exec(get);
+				//ComFuncObj.wait(3);
+				//sshObj.exec(getnext);
+				//ComFuncObj.wait(3);
+				//sshObj.disconnect();
+				//ComFuncObj.wait(1);
 			}
 		}
 	}
+	
 }

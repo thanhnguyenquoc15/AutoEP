@@ -16,6 +16,10 @@ public class OrganizationsPage {
 	
 	protected Logger log = Logger.getLogger(this.getClass().getName());
 	// Page Objects
+	
+	/*
+	 ***********The methods of Organizations Page*********************
+	 */
 	//method to choose organization
 	public WebElement orgName(String oName) {
 		WebElement orgName = driver.findElement(By.xpath("//a[text()=\"" + oName + "\"]"));
@@ -60,6 +64,9 @@ public class OrganizationsPage {
 		return checkboxAllOrg;
 	}
 	
+	/*
+	 ***********The methods of Add Organizations Page*********************
+	 */
 	//method - input name organization when create a new organization
 	public WebElement inputNameOrg() {
 		WebElement inputNameOrg = driver.findElement(By.xpath("//input[@id=\"organization:orgName\"]"));
@@ -101,7 +108,10 @@ public class OrganizationsPage {
 		WebElement requestedZoneOrg = driver.findElement(By.xpath("//span[text()=\"" + zName + "\"]/..//img[@alt=\"Collapse\"]/../../../../../../../..//input[@type=\"text\"]"));
 		return requestedZoneOrg; 
 	}
-		
+	
+	/*
+	 ***********The methods of Change Password Longevity Organizations Page*********************
+	 */
 	//method - assign system for organization in change Password Longevity page
 	public WebElement pwdLongevitySysOrg() {
 		WebElement pwdLongevitySysOrg = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:enforcePwdLongevity:0\"]"));

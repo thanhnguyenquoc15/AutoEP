@@ -67,7 +67,7 @@ public abstract class HelperClass {
 	@AfterSuite
 	public void afterSuite() throws IOException{
 	log.info("in @AfterSuite"); 
-	//driver.quit();
+	driver.quit();
 	}
 	
 	

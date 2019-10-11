@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import frame.EPCommonFunction;
 import lib.ReadData;
-import lib.SSHCommand;
+import lib.SSHCommands;
 
 //import static lib.ReadData.*;
 public class EPCommand {
@@ -17,13 +17,13 @@ public class EPCommand {
 @Test
    public void checkCommand() {
 	
-	SSHCommand sshObj = new SSHCommand();
-	sshObj.connect(readObj.EPServer, readObj.EPUser_SSH, readObj.EPPass_SSH);
+	SSHCommands sshObj = new SSHCommands();
+	//sshObj.connect(readObj.EPServer, readObj.EPUser_SSH, readObj.EPPass_SSH);
 	String cmd = "service vpms status";
 	String cmd1 = "iaversion.php";
 	//log.info(cmd1);
-	sshObj.exec(cmd1);
-	sshObj.disconnect();
+	//sshObj.exec(cmd1);
+	//sshObj.disconnect();
 	epcoObj.wait(5);
 }
 }

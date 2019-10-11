@@ -34,6 +34,7 @@ public class TestCaseClass extends HelperClass {
 		ComFuncObj = PageFactory.initElements(driver, EPCommonFunction.class);
 		userPageObj = PageFactory.initElements(driver, UsersPage.class);
 		snmpPageObj = PageFactory.initElements(driver, SNMPPage.class);
+		
 	}
 	
 	@Test
@@ -63,7 +64,7 @@ public class TestCaseClass extends HelperClass {
 //	    rolepage.deleteRole(testData.get("rName").toString());
 		
 		
-		rolePageObj.nameDscRole_test();
+//		rolePageObj.nameDscRole_test();
 	}
 	
 	@Test
