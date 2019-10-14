@@ -3,7 +3,7 @@
 
 <suite name="FirstDemoSuite">
  
- <test name="FirstTesting">
+ <!-- <test name="FirstTesting">
  	 <parameter name="dataFile" value="SomeTestCases.xlsx" />
  	 <parameter name="dataSheet" value="TestData"/>
  	 <classes>
@@ -22,6 +22,18 @@
 	 	<class name="scripts.emailUI">
 	 		<methods>
 					<include name="emailAddresses"></include>
+			</methods>
+		</class>
+	 </classes>
+ </test> -->
+ 
+ <test name="emailAddresses">
+ 	 <parameter name="dataFile" value="SomeTestCases.xlsx" />
+ 	 <parameter name="dataSheet" value="Role"/>
+ 	 <classes>
+	 	<class name="scripts.emailUI">
+	 		<methods>
+					<include name="SSHTesting"></include>
 			</methods>
 		</class>
 	 </classes>

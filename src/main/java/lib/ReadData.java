@@ -39,6 +39,10 @@ public class ReadData {
 	
 	public static final String EPPass = readPropertyValue("EPPass");
 	
+	public static final String OSUSER = readPropertyValue("OSUser");
+	
+	public static final String OSPASS = readPropertyValue("OSPass");
+	
 	public static final String BROWSER = readPropertyValue("BROWSER");
 	
 	

@@ -106,14 +106,13 @@ public class emailUI extends HelperClass{
 	 */
 	@Test(dataProvider = "dataMap", dataProviderClass = ReadData.class)
 	public void SSHTesting(Hashtable testData) throws Exception, ParseException, IOException {
-		
-//		ssh.sshConnect("service appserver status && service vpms status");
-//		ssh.sshConnect("service appserver status&&service vpms status");
-//		ssh.sshConnectShell("cd /tmp&&lenhTaoCert");
-		ssh.sshConnectShell("service vpms status","cd /tmp","pwd");
-//		ssh.exeCmd(channel, "cd /tmp");
-//		ssh.exeCmd(channel, "pwd");
-
+		log.info("Reading Input details...");
+		log.info("Test Data: -" + testData);
+//		ssh.sshConnectShell("service vpms status","cd /tmp","pwd","iaversion.php");
+		ssh.sshShell("cd /opt/Avaya/ExperiencePortal/VPMS/SNMP/",
+				"./SendSNMPRequest -h 10.128.228.75 -v 3 -c khang -t GET -T MD5 -A 1_Abc_123 -R DES -P 1_Abc_123");
+//		ssh.sshConnectExec("cd /opt/Avaya/ExperiencePortal/VPMS/SNMP/"
+//				+ "&&bash SendSNMPRequest -h 10.128.228.75 -v 3 -c khang -t GET -T MD5 -A 1_Abc_123 -R DES -P 1_Abc_123");
 	}
 
 }
