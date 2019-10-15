@@ -1,17 +1,29 @@
 package frame;
 
+import org.apache.commons.math3.analysis.function.Log;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 import lib.BrowserFactory;
 import lib.ReadData;
 
+import scripts.HelperClass;
+import frame.RolesPage;
+
 public class RolesPage {
 
-	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
-
+//	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
+	WebDriver driver = HelperClass.driver;
+//	driver = this.driver;
+//	 
+//	PageFactory.initElements(driver, this);
+	
+//	protected BrowserFactory BrowserFactory = PageFactory.initElements(driver, BrowserFactory.class);
+	protected EPCommonFunction ComFunc = PageFactory.initElements(driver, EPCommonFunction.class);
+	
 	protected Logger log = Logger.getLogger(this.getClass().getName());
 	// Page Objects
 

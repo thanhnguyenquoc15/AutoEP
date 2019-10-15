@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
@@ -53,3 +54,60 @@
     </test> <!-- FirstTesting -->
   </suite> <!-- regression -->
 </testng-results>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="FirstDemoSuite" duration-ms="12130" started-at="2019-10-14T07:16:22Z" finished-at="2019-10-14T07:16:34Z">
+    <groups>
+    </groups>
+    <test name="emailAddresses" duration-ms="12130" started-at="2019-10-14T07:16:22Z" finished-at="2019-10-14T07:16:34Z">
+      <class name="scripts.emailUI">
+        <test-method status="PASS" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:scripts.emailUI@185d8b6]" name="beforeSuite" is-config="true" duration-ms="15524" started-at="2019-10-14T07:16:06Z" finished-at="2019-10-14T07:16:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3af4e0bf]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:scripts.emailUI@185d8b6]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-10-14T07:16:22Z" finished-at="2019-10-14T07:16:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethodClass()[pri:0, instance:scripts.emailUI@185d8b6]" name="beforeMethodClass" is-config="true" duration-ms="81" started-at="2019-10-14T07:16:24Z" finished-at="2019-10-14T07:16:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethodClass -->
+        <test-method status="PASS" signature="SSHTesting(java.util.Hashtable)[pri:0, instance:scripts.emailUI@185d8b6]" name="SSHTesting" duration-ms="10239" started-at="2019-10-14T07:16:24Z" data-provider="dataMap" finished-at="2019-10-14T07:16:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Enable=yes, Pass=1_Abc_123, Enforce=, Verify=, Role=administration|auditor|reporting, uName=phu}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SSHTesting -->
+        <test-method status="PASS" signature="close()[pri:0, instance:scripts.emailUI@185d8b6]" name="close" is-config="true" duration-ms="4" started-at="2019-10-14T07:16:34Z" finished-at="2019-10-14T07:16:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:scripts.emailUI@185d8b6]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-10-14T07:16:34Z" finished-at="2019-10-14T07:16:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:scripts.emailUI@185d8b6]" name="afterSuite" is-config="true" duration-ms="797" started-at="2019-10-14T07:16:34Z" finished-at="2019-10-14T07:16:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- scripts.emailUI -->
+    </test> <!-- emailAddresses -->
+  </suite> <!-- FirstDemoSuite -->
+</testng-results>
+>>>>>>> branch 'thanh' of https://github.com/thanhnguyenquoc15/AutoEP

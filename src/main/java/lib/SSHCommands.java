@@ -189,7 +189,6 @@ public class SSHCommands {
 	 * @LastModifiedDate 11-Octorber-2019
 	 * @LastModifiedBy nqthanh1
 	 */
-
 	public void sshShell(String... commands) throws Exception {
 
 		log.info(
@@ -210,6 +209,7 @@ public class SSHCommands {
 		PrintStream ps = new PrintStream(out, true);
 		// open channel
 		channel.connect();
+		log.info("channel connected");
 		InputStream input = channel.getInputStream();
 		for (String command : commands) {
 			ps.print(command + "\n");
@@ -217,18 +217,6 @@ public class SSHCommands {
 			printResult(input, channel);
 		}
 		ps.close();
-//		if (channel.isClosed()) {
-//		log.info("Connection channel closed");
-//		log.info("Check if exec success or not ... ");
-//		iExitStatus = channel.getExitStatus();
-//		if (iExitStatus == 0) {
-//			log.info("Execute successfully for command");
-//		} else {
-//			log.info("Execution failed while executing command");
-//			break;
-//		}
-//		break;
-//	}
 		channel.disconnect();
 		log.info("Connection channel closed");
 		session.disconnect();
@@ -250,8 +238,7 @@ public class SSHCommands {
 	 */
 	public void sshToHost(String host, String OSuser, String OSpass, String... commands) throws Exception {
 
-		log.info(
-				"---------------------------------------------------------------------------------------------------------------------------------------");
+		log.info("-------------------------------------------------------------------------------------------------------");
 		log.debug("Entering into Method : " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		java.util.Properties config = new java.util.Properties();
 		config.put("StrictHostKeyChecking", "no");
@@ -268,6 +255,7 @@ public class SSHCommands {
 		PrintStream ps = new PrintStream(out, true);
 		// open channel
 		channel.connect();
+		log.info("channel connected \n");
 		InputStream input = channel.getInputStream();
 		for (String command : commands) {
 			ps.print(command + "\n");
@@ -275,19 +263,6 @@ public class SSHCommands {
 			printResult(input, channel);
 		}
 		ps.close();
-
-//		if (channel.isClosed()) {
-//		log.info("Connection channel closed");
-//		log.info("Check if exec success or not ... ");
-//		iExitStatus = channel.getExitStatus();
-//		if (iExitStatus == 0) {
-//			log.info("Execute successfully for command");
-//		} else {
-//			log.info("Execution failed while executing command");
-//			break;
-//		}
-//		break;
-//	}
 		channel.disconnect();
 		log.info("Connection channel closed");
 		session.disconnect();
@@ -302,6 +277,7 @@ public class SSHCommands {
 	 * @param channel
 	 */
 	private void printResult(InputStream input, Channel channel) throws Exception {
+//		log.debug("Entering into Method : " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		Date startDate = new Date();
 		//time out if the command execute longer than this 
 		int timeout = 200;
@@ -322,7 +298,9 @@ public class SSHCommands {
 					break;
 				String str = (new String(tmp, 0, i));
 				sb.append(str);
-				log.info(str);			
+				System.out.println(str);
+//				PrintStream ps = 
+//				log.info(str);			
 				//check if command executed or not
 				String lastMess = str.substring(str.length() - 6);
 				if (difference >= timeout || lastMess.contains("]# ")) {
@@ -344,3 +322,4 @@ public class SSHCommands {
 		}
 	}
 }
+

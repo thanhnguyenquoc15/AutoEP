@@ -3,17 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="scripts.TestCaseClass">
+      <class name="scripts.emailUI">
         <methods>
           <include name="beforeClass"/>
+          <include name="SSHTesting"/>
           <include name="beforeMethodClass"/>
           <include name="afterClass"/>
           <include name="close"/>
+          <include name="emailAddresses"/>
           <include name="beforeSuite"/>
           <include name="afterSuite"/>
-          <include name="demoTestCase"/>
         </methods>
-      </class> <!-- scripts.TestCaseClass -->
+      </class> <!-- scripts.emailUI -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

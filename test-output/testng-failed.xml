@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [regression]">
@@ -19,3 +20,26 @@
     </classes>
   </test> <!-- FirstTesting(failed) -->
 </suite> <!-- Failed suite [regression] -->
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [FirstDemoSuite]">
+  <test thread-count="5" name="emailAddresses(failed)">
+    <parameter name="dataFile" value="SomeTestCases.xlsx"/>
+    <parameter name="dataSheet" value="Role"/>
+    <classes>
+      <class name="scripts.emailUI">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="SSHTesting"/>
+          <include name="beforeMethodClass"/>
+          <include name="afterClass"/>
+          <include name="close"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- scripts.emailUI -->
+    </classes>
+  </test> <!-- emailAddresses(failed) -->
+</suite> <!-- Failed suite [FirstDemoSuite] -->
+>>>>>>> branch 'thanh' of https://github.com/thanhnguyenquoc15/AutoEP

@@ -22,9 +22,8 @@ public class EPCommonFunction {
 	
 	protected Logger log = Logger.getLogger(this.getClass().getName());
 	
-	
-	
-	
+	//	WebDriver driver = HelperClass.driver;
+
 	// select the page to handle from EPM Menu Bar	
 		public void switchEPMenu(String page) {
 			log.debug("Entering into Method : " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -134,10 +133,7 @@ public class EPCommonFunction {
 			log.info("---------------------------------------------------------------------------------------------------------------------------------------");
 		}
 
-	
-	//writing method
-
-	/* 
+	/*
 	 * @author: tqnguyen@avaya.com
 	 * @last modified date:
 	 * @desc opens a modal window to display a message
@@ -145,17 +141,32 @@ public class EPCommonFunction {
 	 * @param attribute: the attribute that would be selected in the box
 	 * @return bool - success or failure
 	 */
-		public  void selectMultiElementsBox(WebElement box,String attribute) {
-			try
-			{
-				Select select = new Select(box);
-				select.selectByValue(attribute);
-			}
-			catch(Exception e)
-			{
-				log.info("fail to select "+ attribute);
-			}
-			
+	public void selectMultiElementsBox(WebElement box, String attribute) {
+		try {
+			Select select = new Select(box);
+			select.deselectAll();
+//					select.selectByValue(attribute);
+			select.selectByVisibleText(attribute);
+		} catch (Exception e) {
+			log.info("fail to select " + attribute);
 		}
+
+	}
+
+//investigate
+//	public static void main(String args[]) {
+//		String s;
+//		Process p;
+//		try {
+//			p = Runtime.getRuntime().exec("ls -aF");
+//			BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+//			while ((s = br.readLine()) != null)
+//				System.out.println("line: " + s);
+//			p.waitFor();
+//			System.out.println("exit: " + p.exitValue());
+//			p.destroy();
+//		} catch (Exception e) {
+//		}
+//	}
 
 }

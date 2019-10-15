@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import bsh.ParseException;
+import frame.AuditLogViewerPage;
 import frame.EPCommonFunction;
 import frame.EPLoginPage;
 import frame.RolesPage;
@@ -25,18 +26,27 @@ public class TestCaseClass extends HelperClass {
 	protected UsersPage userPageObj ;
 	protected SNMPPage snmpPageObj ;
 	protected SSHCommands sshObj ;
+	protected AuditLogViewerPage auditPageObj;
+	
 	protected Logger log = Logger.getLogger(this.getClass().getName());
+
 	
 	
-	@Override
+
 	public void performBeforeMethodOperation() {
 		// TODO Auto-generated method stub
 		loginPageObj = PageFactory.initElements(driver, EPLoginPage.class);
 		rolePageObj = PageFactory.initElements(driver, RolesPage.class);
 		ComFuncObj = PageFactory.initElements(driver, EPCommonFunction.class);
 		userPageObj = PageFactory.initElements(driver, UsersPage.class);
-		snmpPageObj = PageFactory.initElements(driver, SNMPPage.class);
+		auditPageObj = PageFactory.initElements(driver, AuditLogViewerPage.class);
 		sshObj = PageFactory.initElements(driver, SSHCommands.class);
+		snmpPageObj = PageFactory.initElements(driver, SNMPPage.class);
+	}
+
+
+	public void performAfterMethodOperation() {
+		// TODO Auto-generated method stub
 		
 	}
 	
@@ -66,8 +76,7 @@ public class TestCaseClass extends HelperClass {
 		ComFuncObj.switchFrame("main");
 //	    rolepage.deleteRole(testData.get("rName").toString());
 		
-		
-//		rolePageObj.nameDscRole_test();
+//		rolePageObj.deleteRole(testData.get("rName").toString());
 	}
 	
 	@Test
