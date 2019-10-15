@@ -16,141 +16,139 @@ public class RolesPage {
 	// Page Objects
 
 	/*
-	 *********** The methods of Roles Page*********************
+	 *********** The WebElement of Roles Page*********************
 	 */
-	// method to choose roles
+	// Choose roles
 	public WebElement roleName(String rName) {
 		WebElement roleName = driver.findElement(By.xpath("//a[text()=\"" + rName + "\"]"));
 		return roleName;
 	}
 
-	// method to change password longevity for roles
+	// Change password longevity for roles
 	public WebElement penRoleName(String rName) {
 		WebElement penRoleName = driver.findElement(
 				By.xpath("//a[text()=\"" + rName + "\"]/../../td[@class=\"centercolumn\"]/table/tbody/tr/td[3]/a"));
 		return penRoleName;
 	}
 
-	// method to choose check box roles
+	// Choose check box roles
 	public WebElement checkboxRoleName(String rName) {
 		WebElement checkBoxRoleName = driver
 				.findElement(By.xpath("//a[text()=\"" + rName + "\"]/../..//input[@type=\"checkbox\"]"));
 		return checkBoxRoleName;
 	}
 
-	// method to use buttons - Add/Delete/Help
+	// Use buttons - Add/Delete/Help
 	public WebElement Button(String buttonName) {
 		WebElement Button = driver.findElement(By.xpath("//input[@value=\"" + buttonName + "\"]"));
 		return Button;
 	}
 
-	// method - choose descending order to role by name
+	// Choose descending order to role by name
 	public WebElement nameDscRole() {
 		WebElement nameDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Dsc\"]"));
 		return nameDscRole;
 	}
 
-	// method - choose ascending order to role by name
+	// Choose ascending order to role by name
 	public WebElement nameAscRole() {
 		WebElement nameAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:name_Asc\"]"));
 		return nameAscRole;
 	}
 
-	// method - choose descending order to role by type
+	// Choose descending order to role by type
 	public WebElement typeDscRole() {
 		WebElement typeDscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:type_Dsc\"]"));
 		return typeDscRole;
 	}
 
-	// method - choose ascending order to role by name
+	// Choose ascending order to role by name
 	public WebElement typeAscRole() {
 		WebElement typeAscRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:type_Asc\"]"));
 		return typeAscRole;
 	}
 
-	// method - check all roles
+	// Check all roles
 	public WebElement checkboxAllRole() {
 		WebElement checkboxAllRole = driver.findElement(By.xpath("//input[@id=\"rolesList:roleList:allDeleted\"]"));
 		return checkboxAllRole;
 	}
 
 	/*
-	 *********** The methods of Add Roles Page*********************
+	 *********** The WebElement of Add Roles Page*********************
 	 */
-	// method - input name role when create a new role
+	// Input name role 
 	public WebElement inputNameRole() {
 		WebElement inputNameRole = driver.findElement(By.xpath("//input[@id=\"role:roleName\"]"));
 		return inputNameRole;
 	}
 
-	// method - enable organization for role when create a new role Yes/No
+	// Enable organization for role 
 	public WebElement enableOrgRole(String value) {
 		WebElement enableOrgRole = driver.findElement(By.xpath("//input[@value=\"" + value + "\"]"));
 		return enableOrgRole;
 	}
 
-	// method - select organization for role when create a new role
+	// Select organization for role 
 	public WebElement selectOrgRole() {
 		WebElement selectOrgRole = driver.findElement(By.xpath("//select[@id=\"role:organizationSelect\"]"));
 		return selectOrgRole;
 	}
 
-	// method - select system/organization password longevity for role when create a
-	// new role
+	// Select system/organization password longevity for role 
 	public WebElement sysPwdLongRole() {
 		WebElement sysPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:enforcePwdLongevity:0\"]"));
 		return sysPwdLongRole;
 	}
 
-	// method - select custom password longevity for role when create a new role
+	// Select custom password longevity for role 
 	public WebElement cusPwdLongRole() {
 		WebElement cusPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:enforcePwdLongevity:1\"]"));
 		return cusPwdLongRole;
 	}
 
-	// method - set days for custom password longevity for role when create a new
-	// role
+	// Set days for custom password longevity for role
 	public WebElement dayPwdLongRole() {
 		WebElement dayPwdLongRole = driver.findElement(By.xpath("//input[@id=\"role:passwordLongevity\"]"));
 		return dayPwdLongRole;
 	}
 
-	// method - select start with role for role when create a new role
+	// Select start with role for role when create a new role
 	public WebElement startWithRole() {
 		WebElement startWithRole = driver.findElement(By.xpath("//select[@id=\"role:startWith\"]"));
 		return startWithRole;
 	}
 
-	// method - expand all role when create a new role
+	// Expand all role when create a new role
 	public WebElement expandLinkRole() {
 		WebElement expandLinkRole = driver.findElement(By.xpath("//a[@id=\"roleEdit:expandlink\"]"));
 		return expandLinkRole;
 	}
 
-	// method - collapse all role when create a new role
+	// Collapse all role when create a new role
 	public WebElement collapseLinkRole() {
 		WebElement collapseLinkRole = driver.findElement(By.xpath("//a[@id=\"roleEdit:collapselink\"]"));
 		return collapseLinkRole;
 	}
 
 	/*
-	 *********** The methods of Change Password Longevity Roles Page*********************
+	 *********** The WebElement of Change Password Longevity Roles Page*********************
 	 */
-	// method - assign system for role in change Password Longevity page
+	// Assign system for role in change Password Longevity page
 	public WebElement pwdLongevitySysRole() {
 		WebElement pwdLongevitySysRole = driver
 				.findElement(By.xpath("//input[@id=\"pwdLongevity:enforcePwdLongevity:0\"]"));
 		return pwdLongevitySysRole;
 	}
 
-	// method - assign custom for role in change Password Longevity page
+	// Assign custom for role in change Password Longevity page
 	public WebElement pwdLongevityCusRole() {
 		WebElement pwdLongevityCusRole = driver
 				.findElement(By.xpath("//input[@id=\"pwdLongevity:enforcePwdLongevity:1\"]"));
 		return pwdLongevityCusRole;
 	}
 
-	// method - set days for role in change Password Longevity page
+	// Set days for role in change Password Longevity page
 	public WebElement pwdLongevityRole() {
 		WebElement pwdLongevityRole = driver.findElement(By.xpath("//input[@id=\"pwdLongevity:passwordLongevity\"]"));
 		return pwdLongevityRole;

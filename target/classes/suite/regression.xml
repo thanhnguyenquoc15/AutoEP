@@ -9,7 +9,7 @@
  	 <classes>
 	 	<class name="scripts.TestCaseClass">
 	 		<methods>
-					<include name="setSNMPv3"></include>
+					<include name="SNMP_authPriv"></include>
 			</methods>
 		</class>
 	 </classes>

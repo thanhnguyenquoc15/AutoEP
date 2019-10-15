@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-regression">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-regression" title="scripts.TestCaseClass" hash-for-method="setSNMPv3({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPas...)">setSNMPv3({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPas...)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-regression" title="scripts.TestCaseClass" hash-for-method="SNMP_authPriv({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPas...)">SNMP_authPriv({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPas...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-regression -->
@@ -125,9 +125,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="setSNMPv3({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPas...)">
-                  </a> <!-- setSNMPv3({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPas...) -->
-                  <span class="method-name">setSNMPv3</span>
+                  <a name="SNMP_authPriv({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPas...)">
+                  </a> <!-- SNMP_authPriv({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPas...) -->
+                  <span class="method-name">SNMP_authPriv</span>
                   <span class="parameters">({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPass=1_Abc_123, authPro=MD5|SHA, SNMPserver=10.30.4.77})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -149,7 +149,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;scripts.TestCaseClass&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;setSNMPv3&quot;/&gt;
+          &lt;include name=&quot;SNMP_authPriv&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- scripts.TestCaseClass --&gt;
     &lt;/classes&gt;
@@ -193,14 +193,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'setSNMPv3')
+data.setCell(0, 1, 'SNMP_authPriv')
 data.setCell(0, 2, 'scripts.TestCaseClass')
-data.setCell(0, 3, 241784);
+data.setCell(0, 3, 108842);
 window.suiteTableData['regression']= { tableData: data, tableDiv: 'times-div-regression'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-regression">
               </div> <!-- times-div-regression -->
             </div> <!-- times-div -->
@@ -239,32 +239,32 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">scripts.TestCaseClass</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">beforeSuite(org.testng.TestRunner@42b21d99)</span>
+                <span class="method-name">beforeSuite(org.testng.TestRunner@3a2b2322)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">9535 ms</span>
+                <span class="method-start">11854 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethodClass</span>
-                <span class="method-start">11038 ms</span>
+                <span class="method-start">13591 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">setSNMPv3({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPas...)</span>
-                <span class="method-start">11049 ms</span>
+                <span class="method-name">SNMP_authPriv({SNMPuser=root, privPro=DES|AES128, authPass=1_Abc_123, SNMPpass=rootpw, securityName=khang, privPas...)</span>
+                <span class="method-start">13609 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close</span>
-                <span class="method-start">252838 ms</span>
+                <span class="method-start">122457 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">252839 ms</span>
+                <span class="method-start">122460 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">252895 ms</span>
+                <span class="method-start">122558 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

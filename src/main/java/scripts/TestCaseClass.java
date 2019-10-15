@@ -14,6 +14,7 @@ import frame.RolesPage;
 import frame.SNMPPage;
 import frame.UsersPage;
 import lib.ReadData;
+import lib.SSHCommands;
 
 
 public class TestCaseClass extends HelperClass {
@@ -23,6 +24,7 @@ public class TestCaseClass extends HelperClass {
 	protected EPCommonFunction ComFuncObj ;
 	protected UsersPage userPageObj ;
 	protected SNMPPage snmpPageObj ;
+	protected SSHCommands sshObj ;
 	protected Logger log = Logger.getLogger(this.getClass().getName());
 	
 	
@@ -34,6 +36,7 @@ public class TestCaseClass extends HelperClass {
 		ComFuncObj = PageFactory.initElements(driver, EPCommonFunction.class);
 		userPageObj = PageFactory.initElements(driver, UsersPage.class);
 		snmpPageObj = PageFactory.initElements(driver, SNMPPage.class);
+		sshObj = PageFactory.initElements(driver, SSHCommands.class);
 		
 	}
 	
@@ -82,18 +85,35 @@ public class TestCaseClass extends HelperClass {
 	
 	@Test
 	(dataProvider = "dataMap", dataProviderClass = ReadData.class)
-	public void setSNMPv3(Hashtable testData) throws Exception,
+	public void SNMP_authPriv(Hashtable testData) throws Exception,
     													  ParseException,
     													  IOException 
 	{
-		log.info("SNMP Page ");
-		snmpPageObj.SNMP_authPriv(testData.get("securityName").toString(),
-							  testData.get("authPro").toString(),
-							  testData.get("authPass").toString(),
-							  testData.get("privPro").toString(),
-							  testData.get("privPass").toString(),
-							  testData.get("SNMPserver").toString(),
-							  testData.get("SNMPuser").toString(),
-							  testData.get("SNMPpass").toString());
+		log.info("Reading Input details...");
+		log.info("Test Data : -" + testData);
+		log.info("Login AAEP and config SNMP Agent Version 3");
+		String auth_Pro[] = testData.get("authPro").toString().split("\\|");
+		String priv_Pro[] = testData.get("privPro").toString().split("\\|");
+		for (int i = 0; i < auth_Pro.length; i++) {
+			for (int j = 0; j < priv_Pro.length; j++) {
+				log.info("Enable SNMPv3; set Authentication to " + auth_Pro[i] + " and Privacy to " + priv_Pro[j]);
+				snmpPageObj.set_SNMP_Agent_Settings_version3(testData.get("securityName").toString(),auth_Pro[i],testData.get("authPass").toString(),priv_Pro[j],testData.get("privPass").toString());
+				
+				log.info("Restart avpSNMPAgentSvc");
+				String restartSNMP = "service avpSNMPAgentSvc restart";
+				sshObj.sshShell(restartSNMP);
+				ComFuncObj.wait(1);
+				
+				log.info("Login external SNMP server");
+				String cmd = "cd /opt/Avaya/ExperiencePortal/VPMS/SNMP/";
+				String pwd = "pwd";
+				String get = "bash SendSNMPRequest -h " + ReadData.EPServer + " -v 3 -c " + testData.get("securityName").toString() + " -t GET -T " + auth_Pro[i] + " -A " + testData.get("authPass").toString() + " -R " + priv_Pro[j] + " -P " + testData.get("privPass").toString();
+				String getnext = "bash SendSNMPRequest -h " + ReadData.EPServer + " -v 3 -c " + testData.get("securityName").toString() + " -t GETNEXT -T " + auth_Pro[i] + " -A " + testData.get("authPass").toString() + " -R " + priv_Pro[j] + " -P " + testData.get("privPass").toString();
+				log.info("Negative SNMP");
+				log.info("Execute SNMP get and getnext");
+				sshObj.sshToHost(testData.get("SNMPserver").toString(),testData.get("SNMPuser").toString(),testData.get("SNMPpass").toString(),cmd,pwd,get,getnext);
+				ComFuncObj.wait(1);
+			}
+		}
 	}
 }
