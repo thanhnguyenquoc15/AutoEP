@@ -11,7 +11,7 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 
@@ -23,16 +23,20 @@ public class ReadData {
 	
 	private static XSSFWorkbook workbook;
 	private static XSSFSheet sheet;
+
+	// SuitePath
+	public static final String SUITE_PATH = System.getProperty("user.dir");
 	
 
 	public static final String userDir = System.getProperty("user.dir");
+
 	public static final String testDataDir = "\\src\\main\\java\\data\\";
 	
 	
-	private static final String EXCELFILELOCATION = userDir + testDataDir + "TestCaseData\\";
+	private static final String EXCELFILELOCATION = SUITE_PATH + testDataDir + "TestCaseData\\";
 	
-	private static final String DEFAULTPROPERTIES = userDir + testDataDir +"PropertiesFile\\default.properties";
-	private static final String PROPERTIESFILE = userDir + testDataDir + "PropertiesFile\\" + getPropertyFile();
+	private static final String DEFAULTPROPERTIES = SUITE_PATH + testDataDir +"PropertiesFile\\default.properties";
+	private static final String PROPERTIESFILE = SUITE_PATH + testDataDir + "PropertiesFile\\" + getPropertyFile();
 	
 	public static final String EPServer = readPropertyValue("EPServer");
 	
@@ -40,17 +44,29 @@ public class ReadData {
 	
 	public static final String EPPass = readPropertyValue("EPPass");
 	
-	public static final String OSUSER = readPropertyValue("OSUser");
-	
-	public static final String OSPASS = readPropertyValue("OSPass");
-	
 	public static final String BROWSER = readPropertyValue("BROWSER");
 
-	//SSH detail 
+
+	// SSH Detail
 	
+
 	public static final String EPUser_SSH = readPropertyValue("EPUser_SSH");
 	public static final String EPPass_SSH = readPropertyValue("EPPass_SSH");
+	
+	// Log4j property file location
+    public static String LOGGER_PROPERTY_FILE = SUITE_PATH + "src\\main\\resources\\log4j.properties";
 
+ // Log Folder Path
+ 	public static String LOG_FOLDER_PATH = SUITE_PATH + "\\log\\";
+	// Navigate Web element browser
+	
+	public static WebDriver WEBDRIVER;
+	
+	// Installer path 
+	
+	public static String INSTALLER_PATH = SUITE_PATH + "src\\main\\java\\installer\\EPM\\";
+	
+	
 	
 	public static void loadExcelFile(String fileName, String sheetName) throws IOException
 	{		

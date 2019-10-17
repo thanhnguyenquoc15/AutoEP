@@ -23,7 +23,7 @@ public class BrowserFactory {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		options.setPageLoadStrategy(PageLoadStrategy.NONE);
-		System.setProperty("webdriver.chrome.driver", ReadData.userDir +"\\src\\main\\java\\lib\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ReadData.SUITE_PATH +"\\src\\main\\java\\lib\\Driver\\chromedriver.exe");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -44,7 +44,7 @@ public class BrowserFactory {
 		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
 		}else if(browserName.equalsIgnoreCase("chrome")){
 		System.out.println("in chrome");
-		System.setProperty("webdriver.chrome.driver", ReadData.userDir +"\\src\\main\\java\\lib\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ReadData.SUITE_PATH +"\\src\\main\\java\\lib\\Driver\\chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();

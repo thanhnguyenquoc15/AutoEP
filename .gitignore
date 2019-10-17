@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 /target/
+<<<<<<< HEAD
+/bin/
+=======
+>>>>>>> branch 'khang' of https://github.com/thanhnguyenquoc15/AutoEP.git
 =======
 target/
 test-output/
->>>>>>> branch 'thanh' of https://github.com/thanhnguyenquoc15/AutoEP
+>>>>>>> branch 'thanh' of https://github.com/thanhnguyenquoc15/AutoEP.git

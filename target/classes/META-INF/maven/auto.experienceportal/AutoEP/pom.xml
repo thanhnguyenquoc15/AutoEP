@@ -6,7 +6,18 @@
   
   	<!-- Project dependencies -->
 	<dependencies>
-	
+	    <dependency>
+           <groupId>org.apache.commons</groupId>
+           <artifactId>commons-lang3</artifactId>
+           <version>3.3.2</version>
+       </dependency>
+       <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+       <dependency>
+           <groupId>commons-io</groupId>
+           <artifactId>commons-io</artifactId>
+           <version>2.6</version>
+       </dependency>
+       
 		<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
 		    <artifactId>selenium-java</artifactId>
@@ -27,6 +38,17 @@
 		    <artifactId>log4j</artifactId>
 		    <version>1.2.17</version>
 		</dependency>
+		<!--https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <!-- <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+         <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.11.1</version>		
+       </dependency> -->
 		
 		<dependency>
 			<groupId>com.codoid.products</groupId>
@@ -48,13 +70,6 @@
 	      <scope>compile</scope>
 	    </dependency>
 	    
-	    <!-- JSCH dependency for SSH -->
-
-		<dependency>
-			<groupId>com.jcraft</groupId>
-			<artifactId>jsch</artifactId>
-			<version>0.1.53</version>
-		</dependency>
         <!-- JCraft to establish connecting with OS -->
         <dependency>
             <groupId>com.jcraft</groupId>
@@ -62,6 +77,12 @@
             <version>0.1.54</version>
         </dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.github.binarywang/java-testdata-generator -->
+       <dependency>
+           <groupId>com.github.binarywang</groupId>
+           <artifactId>java-testdata-generator</artifactId>
+           <version>1.1.2</version>
+       </dependency>
 		
 	</dependencies>
   

@@ -1,5 +1,6 @@
 package frame;
 
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,10 +14,25 @@ import lib.ReadData;
 public class AuditLogViewerPage {
 
 	protected Logger log = Logger.getLogger(this.getClass().getName());
-	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
+
+
 	
+	
+	//private WebElement searchKeys = driver.findElement(By.xpath("//input[@id=\"auditLogViewerForm:auditkeywords\"]"));
+	
+	//private static String sortBy = "logOptionsSortBy";
+	
+	public WebElement elementsBox(String elementsBox) {
+		WebElement checkBox = driver.findElement(By.xpath("select[@id=\"auditLogViewerForm:" + elementsBox + "']"));
+		return checkBox;
+	}
+
+	WebDriver driver = BrowserFactory.getDriver(ReadData.BROWSER);
 //	WebDriver driver = HelperClass.driver;
 	protected EPCommonFunction ComFunc = PageFactory.initElements(driver, EPCommonFunction.class);
+
+	
+	
 	
 	private static String zonesBox = "auditLogViewerZone";
 	private static String categoriesBox = "logOptionsCatNames";
@@ -36,23 +52,37 @@ public class AuditLogViewerPage {
 	public void generateAuditLogs(	String zones, 
 									String categories, 
 									String actions,
+
+									String keywords,
+									String sortBy,
+
 									String searchKeywords,
 									String sort,
+
 									String predefinedValues,
 									String last,
 									String periodTimes,
 									String startDate,
 									String endDate)
 		{
+
+		ComFunc.selectMultiElementsBox(elementsBox(zonesBox), zones);
+		ComFunc.selectMultiElementsBox(elementsBox(categoriesBox), categories);
+		ComFunc.selectMultiElementsBox(elementsBox(actionsBox), actions);
+		//searchKeys.sendKeys(keywords);
+		elementsBox(sortBy).sendKeys("");
+		
+		
+
 		try
 		{
-		ComFunc.selectMultiElementsBox(elements(zonesBox), zones);
-		ComFunc.selectMultiElementsBox(elements(categoriesBox), categories);
-		ComFunc.selectMultiElementsBox(elements(actionsBox), actions);
-		elements(searchKeys).sendKeys(searchKeywords);
-		elements(sortBy).sendKeys(sort);
-		elements(lastXDays).clear();
-		elements(lastXDays).sendKeys(last);
+//		ComFunc.selectMultiElementsBox(elements(zonesBox), zones);
+//		ComFunc.selectMultiElementsBox(elements(categoriesBox), categories);
+//		ComFunc.selectMultiElementsBox(elements(actionsBox), actions);
+//		elements(searchKeys).sendKeys(searchKeywords);
+//		elements(sortBy).sendKeys(sort);
+//		elements(lastXDays).clear();
+//		elements(lastXDays).sendKeys(last);
 		elements(lastXOptions).sendKeys("Hours");
 		elements("ok").click();
 		}
@@ -61,5 +91,7 @@ public class AuditLogViewerPage {
 			log.info("fail to generate Audit Log ");
 		}			
 	}	
+
+	
 	
 }

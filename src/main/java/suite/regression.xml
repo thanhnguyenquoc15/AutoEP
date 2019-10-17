@@ -5,11 +5,11 @@
  
  <test name="FirstTesting">
  	 <parameter name="dataFile" value="SomeTestCases.xlsx" />
- 	 <parameter name="dataSheet" value="SNMP"/>
+ 	 <parameter name="dataSheet" value="Role"/>
  	 <classes>
 	 	<class name="scripts.TestCaseClass">
 	 		<methods>
-					<include name="SNMP_authPriv"></include>
+					<include name="add_new_user"></include>
 			</methods>
 		</class>
 	 </classes>

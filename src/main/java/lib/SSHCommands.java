@@ -1,12 +1,15 @@
 package lib;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.Date;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
-import com.google.common.io.CharStreams;
+import com.google.gson.internal.ObjectConstructor;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
@@ -17,31 +20,6 @@ import com.jcraft.jsch.UserInfo;
 public class SSHCommands {
 
 	protected Logger log = Logger.getLogger(this.getClass().getName());
-
-//	/**
-//	 * Connect to remote machine and establish session.
-//	 * written by POM team
-//	 * @return if connect successfully, return true, else return false
-//	 */
-//	public Boolean connect(String sHostName, String sUserName, String sPassword) {
-//		try {
-//			session = jsch.getSession(sUserName, sHostName);
-//			log.info("Session initialized with Host [" + sHostName + "] and associated with user [" + sUserName
-//					+ "] and credential " + sPassword);
-//			// session.setUserInfo(userInfo);
-//			session.setPassword(sPassword);
-//			config.put("StrictHostKeyChecking", "no");
-//			session.setConfig(config);
-//			log.info("SSHExec initialized successfully");
-//			log.info("SSHExec trying to connect " + sUserName + "@" + sHostName);
-//			session.connect();
-//			log.info("SSH connection established");
-//			return true;
-//		} catch (Exception e) {
-//			log.info("Connect fails with the following exception: " + e);
-//			return false;
-//		}
-//	}
 	private Session session;
 
 	private Channel channel;
@@ -160,24 +138,7 @@ public class SSHCommands {
 		}
 		return sRetVal;
 	}
-//	retain session solutions	
-//	private Session getSession() throws Exception {
-//	    try {
-//	        ChannelExec testChannel = (ChannelExec) session.openChannel("exec");
-//	        testChannel.setCommand("true");
-//	        testChannel.connect();
-//
-//	            log.debug("Session successfully tested, use it again.");
-//
-//	        testChannel.exit();
-//	    } catch (Throwable t) {
-//	        log.info("Session terminated. Create a new one.");
-//	        session = jsch.getSession(user, host, port);
-//	        session.setConfig(config);
-//	        session.connect();
-//	    }
-//	    return session;
-//	}
+
 
 	/**
 	 * sshConnectShell connect to remote machine and send multiple commands then
@@ -189,6 +150,7 @@ public class SSHCommands {
 	 * @LastModifiedDate 11-Octorber-2019
 	 * @LastModifiedBy nqthanh1
 	 */
+
 	public void sshShell(String... commands) throws Exception {
 
 		log.info(
@@ -209,7 +171,6 @@ public class SSHCommands {
 		PrintStream ps = new PrintStream(out, true);
 		// open channel
 		channel.connect();
-		log.info("channel connected");
 		InputStream input = channel.getInputStream();
 		for (String command : commands) {
 			ps.print(command + "\n");
@@ -217,6 +178,7 @@ public class SSHCommands {
 			printResult(input, channel);
 		}
 		ps.close();
+
 		channel.disconnect();
 		log.info("Connection channel closed");
 		session.disconnect();
@@ -238,10 +200,13 @@ public class SSHCommands {
 	 */
 	public void sshToHost(String host, String OSuser, String OSpass, String... commands) throws Exception {
 
-		log.info("-------------------------------------------------------------------------------------------------------");
+		log.info(
+				"---------------------------------------------------------------------------------------------------------------------------------------");
 		log.debug("Entering into Method : " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		java.util.Properties config = new java.util.Properties();
 		config.put("StrictHostKeyChecking", "no");
+		
+		//connect to remote ssh
 		JSch jsch = new JSch();
 		Session session = jsch.getSession(OSuser, host, 22);
 		log.info("SSHExec trying to connect " + OSuser + "@" + host);
@@ -250,12 +215,16 @@ public class SSHCommands {
 		session.connect();
 		Thread.sleep(2000);
 		log.info("SSH connection established");
+		// execute command
 		Channel channel = session.openChannel("shell");
 		OutputStream out = channel.getOutputStream();
 		PrintStream ps = new PrintStream(out, true);
+		//get object
+
+		
+		
 		// open channel
 		channel.connect();
-		log.info("channel connected \n");
 		InputStream input = channel.getInputStream();
 		for (String command : commands) {
 			ps.print(command + "\n");
@@ -263,6 +232,7 @@ public class SSHCommands {
 			printResult(input, channel);
 		}
 		ps.close();
+
 		channel.disconnect();
 		log.info("Connection channel closed");
 		session.disconnect();
@@ -277,7 +247,6 @@ public class SSHCommands {
 	 * @param channel
 	 */
 	private void printResult(InputStream input, Channel channel) throws Exception {
-//		log.debug("Entering into Method : " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		Date startDate = new Date();
 		//time out if the command execute longer than this 
 		int timeout = 200;
@@ -298,9 +267,7 @@ public class SSHCommands {
 					break;
 				String str = (new String(tmp, 0, i));
 				sb.append(str);
-				System.out.println(str);
-//				PrintStream ps = 
-//				log.info(str);			
+				log.info(str);			
 				//check if command executed or not
 				String lastMess = str.substring(str.length() - 6);
 				if (difference >= timeout || lastMess.contains("]# ")) {
@@ -322,4 +289,3 @@ public class SSHCommands {
 		}
 	}
 }
-
