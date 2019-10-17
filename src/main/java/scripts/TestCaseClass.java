@@ -125,4 +125,13 @@ public class TestCaseClass extends HelperClass {
 			}
 		}
 	}
+	
+	@Test
+	(dataProvider = "dataMap", dataProviderClass = ReadData.class)
+	public void Auth_cert_user(Hashtable testData) throws Exception,
+    													  ParseException,
+    													  IOException 
+	{
+		
+	}
 }
