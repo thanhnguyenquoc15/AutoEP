@@ -97,6 +97,7 @@ public void test2() throws Exception {
 	String cmd = "cd /tmp/";
 	String cmd1 = "cd phu2";
 	s.sshToHost(ReadData.EPServer, ReadData.EPUser_SSH, ReadData.EPPass_SSH, cmd, cmd1, "ls");
+	//pmp
 	
 	//sshObj.connect();
 	
