@@ -101,5 +101,6 @@ public void test2() throws Exception {
 	//sshObj.connect();
 	
 	//sshObj.upload(source, destination);
+	//phan minh phu
 }
 }
