@@ -89,6 +89,7 @@ public void test1() throws Exception {
 	sshObj.connect();
 	sshObj.download(source, destination);
 	sshObj.disconnect1();
+	//phan minh phu
 }
 @Test
 public void test2() throws Exception {
