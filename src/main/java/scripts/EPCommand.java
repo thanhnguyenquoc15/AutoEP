@@ -1,15 +1,17 @@
 package scripts;
 
+import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
-import com.jcraft.jsch.ChannelSftp;
-import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
-import com.jcraft.jsch.Session;
-import com.jcraft.jsch.SftpException;
 
 import frame.EPCommonFunction;
 import lib.ReadData;
@@ -19,17 +21,17 @@ import lib.SSHCommands;
 //import static lib.ReadData.*;
 public class EPCommand {
 	
-private static final boolean fail = false;
+    private static final boolean fail = false;
 //    private ChannelSftp channelsftp = null;
 //    private Session session = null;
 //    private JSch jsch;
 		
-	//protected Logger log = Logger.getLogger(this.getClass().getName());
-	private static final Logger logger = Logger.getLogger(EPCommand.class);
+	protected Logger log = Logger.getLogger(this.getClass().getName());
+	//protected static final Logger logger = Logger.getLogger(EPCommand.class);
 	ReadData readObj = new ReadData();
 	EPCommonFunction epcoObj = new EPCommonFunction();
 	SSHCommand sshObj = new SSHCommand();
-	SSHCommands s = new SSHCommands();
+	SSHCommands sshObjs = new SSHCommands();
 	
 	
 @Test(enabled = fail)
@@ -44,43 +46,7 @@ private static final boolean fail = false;
 	sshObj.disconnect();
 	epcoObj.wait(5);
 	}
-//
-//@Test
-//@Parameters({ "PHost", "PUser", "PPass", "PLocation" })
-//
-//public void InstallPatch() throws InterruptedException,IOException,SQLException{
-//	  
-//	  String rfilename = readObj.INSTALLER_PATH + "";
-//	  sshObj.connect(readObj.EPServer, readObj.EPUser_SSH, readObj.EPPass_SSH);
-//	  epcoObj.DeleteFile(rfilename);
-//	  Runtime runtime = Runtime.getRuntime();
-//	  String cmd = "";
-//	  String cmd1 = "bash setup.sh";
-//	  //cmd = readObj.INSTALLER_PATH + "/setup.sh" + " " + readObj.INSTALLER_PATH + " " + PHost + " " + PUser + " " + PPass + " " + PLocation +  " " 
-//	                                                  // + readObj.EPServer + " " +  readObj.EPUser_SSH + " " + readObj.EPPass_SSH;
-//	  cmd = readObj.INSTALLER_PATH + " " + cmd1 + " "
-//              + readObj.EPServer + " " +  readObj.EPUser_SSH + " " + readObj.EPPass_SSH;
-//	  log.info(cmd);
-//	  
-//	  Process p1 = runtime.exec(cmd);
-//	  int exitValue = p1.waitFor();
-//	  System.out.println(exitValue);
-//	  InputStream is = p1.getInputStream();
-//	  int i = 0;
-//	  while ((i = is.read()) != -1)
-//		{
-//			System.out.print((char) i);
-//			log.debug((char) i);
-//		}
-//	  
-//	 // epcoObj.restartServices();
-//	  cmd = "service vpms resart";
-//	  sshObj.connect(readObj.EPServer, readObj.EPUser_SSH, readObj.EPPass_SSH);
-//	  cmd = "service appserver restart";
-//	  log.info(sshObj.exec(cmd));
-//	  log.info("---------------------------------------------------------------------------------------------------");
-//	
-//}
+
 
 @Test(enabled = fail)
 public void test1() throws Exception {
@@ -89,19 +55,107 @@ public void test1() throws Exception {
 	sshObj.connect();
 	sshObj.download(source, destination);
 	sshObj.disconnect1();
-	//phan minh phu
+	
 }
-@Test
+@Test(enabled = fail)
 public void test2() throws Exception {
-	String source = "D:\\up\\phu.txt";
+	String source = "D:\\up\\phu.sh";
 	String destination = "/tmp/phu2";
-	String cmd = "cd /tmp/";
-	String cmd1 = "cd phu2";
-	s.sshToHost(ReadData.EPServer, ReadData.EPUser_SSH, ReadData.EPPass_SSH, cmd, cmd1, "ls");
+	//String cmd = "cd /tmp/";
+	//String cmd1 = "cd phu2";
+	//s.sshToHost(ReadData.EPServer, ReadData.EPUser_SSH, ReadData.EPPass_SSH, cmd, cmd1, "ls");
 	
-	//sshObj.connect();
+	sshObj.connect();
 	
-	//sshObj.upload(source, destination);
-	//phan minh phu
+	sshObj.upload(source, destination);
+	sshObj.disconnect1();
 }
+
+@Test(enabled = fail)
+public void test3() throws JSchException, IOException {
+	String EPM = "7.2.3.0.0464";
+	String com = "iaversion.php";
+	String path = "D:\\DATA\\auto\\eclipse\\workspace\\AutoEP\\logEP\\Defaultsuite.log";
+	sshObj.connect();
+	sshObj.exec(com);
+		
+	try {
+		
+		String content = FileUtils.readFileToString(new File(path), StandardCharsets.UTF_8);
+		System.out.println(content);
+		log.info(content);
+		log.info("-------------------------------------------------------------------------");
+		assertTrue(content.contains(EPM), "verify TC Passed");
+		//log.assertLog(content.contains(EPM), "TC passed");
+		log.info("TC Passed");
+//		if(content.contains(EPM)) {
+//			
+//		
+//		}
+		//assertEquals(content, EPM);
+	}
+	
+	catch (IOException e){
+		
+		e.printStackTrace();
+	}
+	
+	
+}
+
+@Test(enabled = true)
+public void test4() throws Exception {
+	String S_EPM = "D:\\Patch\\EPM\\EPM_7.2.3.0.0464.tar.gz";
+	String S_MPP = "D:\\Patch\\MPP\\7.2.3.0.0464.tar.gz" ;
+	String D_EPM = "/tmp/Patch/EPM";
+	String D_MPP = "/tmp/Patch/MPP";
+	String command = "cd /tmp";
+	String commandE = "tar -xzvf EPM_7.2.3.0.0464.tar.gz";
+	String command2E = "bash setup.sh";
+	String commandM = "tar -xzvf 7.2.3.0.0464.tar.gz";
+	//String command2M = "bash setup.sh";
+	//String command2 = "cd /MPP";
+	String mkd = "mkdir Patch";
+	String mkd1 = "mkdir Patch/EPM";
+	String mkd2 = "mkdir Patch/MPP";
+	String mkd3 = "cd /tmp/Patch/EPM";
+	String mkd4 = "cd /tmp/Patch/MPP";
+	String EPM = "7.2.3.0.0464";
+	String path = "D:\\DATA\\auto\\eclipse\\workspace\\AutoEP\\logEP\\Defaultsuite.log";
+	//sshObj.connect();
+	sshObjs.sshToHost(readObj.EPServer, readObj.EPUser_SSH, readObj.EPPass_SSH, command, mkd, mkd1, mkd2);
+	log.info("Generated directory" + mkd + mkd1 + mkd2);
+	//sshObjs.sshShell(command1);
+	sshObj.connect();
+	sshObj.upload(S_EPM, D_EPM);
+	sshObj.upload(S_MPP, D_MPP);
+	sshObjs.sshShell(mkd3, commandE, command2E);
+	sshObjs.sshShell(mkd4, commandM, command2E);
+	sshObj.connect();
+	sshObj.exec("iaversion.php");
+try {
+		
+		String content = FileUtils.readFileToString(new File(path), StandardCharsets.UTF_8);
+		System.out.println(content);
+		log.info(content);
+		log.info("-------------------------------------------------------------------------");
+		assertTrue(content.contains(EPM), "verify TC Passed");
+		//log.assertLog(content.contains(EPM), "TC passed");
+		log.info("TC Passed");
+//		if(content.contains(EPM)) {
+//			
+//		
+//		}
+		//assertEquals(content, EPM);
+	}
+	
+	catch (IOException e){
+		
+		e.printStackTrace();
+	}
+	
+	
+}
+
+
 }
