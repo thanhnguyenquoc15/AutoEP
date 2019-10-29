@@ -5,10 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Test;
-
-import com.jcraft.jsch.JSchException;
-import com.jcraft.jsch.SftpException;
+import org.testng.Assert;
 
 import lib.BrowserFactory;
 import lib.ReadData;
@@ -55,6 +52,12 @@ public class SNMPPage {
 	/*
 	 ***********The WebElement of SNMP Agent Settings*********************
 	 */	 
+	//Verify
+	public WebElement verify() {
+		WebElement verify = driver.findElement(By.xpath("////table[@class=\"errors\"]"));
+		return verify;
+	}
+	
 	// Enable SNMP Version 1/2c/3
 	public WebElement enableSNMPVersion(String version) {
 		WebElement enableSNMPVersion = driver.findElement(By.xpath("//input[@id=\"snmpAgent:enableSnmpVersion" + version + "Checkbox\"]"));
@@ -205,7 +208,13 @@ public class SNMPPage {
 	
 	
 	// method to set SNMP Agent Settings version 3
-	public void set_SNMP_Agent_Settings_version3 (String securityName, String authPro, String authPass, String privPro, String privPass) throws Exception {
+	public void set_SNMP_Agent_Settings_version3 (String securityName, 
+												  String authPro, 
+												  String authPass, 
+												  String privPro, 
+												  String privPass,
+												  String verifyMessage,
+												  String message) throws Exception {
 		log.info("Set SNMP Agent Settings with version 3");
 		ComFuncObj.switchEPMenu("SNMP");
 		ComFuncObj.switchFrame("main");
@@ -236,6 +245,14 @@ public class SNMPPage {
 		privPassword().sendKeys(privPass);
 		ComFuncObj.wait(1);
 		Button("Apply").click();
+		ComFuncObj.wait(1);
+		
+		if (verifyMessage == "yes") {
+			String returnMessage = verify().getText();
+			log.info(returnMessage);
+			Assert.assertTrue(returnMessage.contains(message));
+		}
+		
 		ComFuncObj.wait(1);
 		Button("Save").click();
 	}

@@ -1,5 +1,12 @@
 package frame;
 
+import static org.testng.Assert.assertTrue;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -150,8 +157,9 @@ public class EPCommonFunction {
 		} catch (Exception e) {
 			log.info("fail to select " + attribute);
 		}
-
 	}
+	
+
 
 //investigate
 //	public static void main(String args[]) {
