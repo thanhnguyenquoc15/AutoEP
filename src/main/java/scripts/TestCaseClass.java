@@ -86,7 +86,7 @@ public class TestCaseClass extends HelperClass {
 	}
 	
 	@Test
-	(dataProvider = "dataMap", dataProviderClass = ReadData.class)
+	(priority = 1, enabled = true, dataProvider = "dataMap", dataProviderClass = ReadData.class)
 	public void add_new_user(Hashtable testData) throws Exception,
     													  ParseException,
     													  IOException 
@@ -99,7 +99,7 @@ public class TestCaseClass extends HelperClass {
 	}
 	
 	@Test
-	(dataProvider = "dataMap", dataProviderClass = ReadData.class)
+	(priority = 1, enabled = true, dataProvider = "dataMap", dataProviderClass = ReadData.class)
 	public void SNMP_authPriv(Hashtable testData) throws Exception,
     													  ParseException,
     													  IOException 
@@ -124,7 +124,9 @@ public class TestCaseClass extends HelperClass {
 															 auth_Pro[i],
 															 testData.get("authPass").toString(),
 															 priv_Pro[j],
-															 testData.get("privPass").toString(),"","");
+															 testData.get("privPass").toString(),
+															 testData.get("verify").toString(),
+															 testData.get("message").toString());
 				
 				log.info("Restart avpSNMPAgentSvc");
 				String restartSNMP = "service avpSNMPAgentSvc restart";
@@ -146,6 +148,7 @@ public class TestCaseClass extends HelperClass {
 	}
 	
 	@Test
+	(priority = 1, enabled = true)
 	public void Auth_cert_user() throws Exception,JSchException, SftpException
 	{
 		log.info("Login SSH and create a new auth certificate user");
@@ -164,6 +167,7 @@ public class TestCaseClass extends HelperClass {
 	}
 	
 	@Test
+	(priority = 1, enabled = true)
 	public void Check_tomcat_of_appserver_can_install_laster_version() throws Exception,JSchException, SftpException
 	{
 		log.info("Install EPM patch latser version");
@@ -196,6 +200,7 @@ public class TestCaseClass extends HelperClass {
 	}
 	
 	@Test
+	(priority = 1, enabled = true)
 	public void Check_iaversion() throws JSchException, Exception 
 	{
 		sshObj.connect();
@@ -206,6 +211,7 @@ public class TestCaseClass extends HelperClass {
 	}
 	
 	@Test
+	(priority = 1, enabled = true)
 	public void Upgrade_EPM_Patch() throws Exception,JSchException, SftpException
 	{
 		log.info("Upgrade EPM patch latser version");
@@ -234,6 +240,7 @@ public class TestCaseClass extends HelperClass {
 	}
 	
 	@Test
+	(priority = 1, enabled = true)
 	public void Upgrade_MPP_Patch() throws Exception,JSchException, SftpException
 	{		
 		log.info("Upgrade MPP patch latser version");
@@ -262,14 +269,13 @@ public class TestCaseClass extends HelperClass {
 	}
 	
 	@Test
-	(dataProvider = "dataMap", dataProviderClass = ReadData.class)
+	(priority = 1, enabled = true, dataProvider = "dataMap", dataProviderClass = ReadData.class)
 	public void test_JIRA_EXPPORTAL_2969(Hashtable testData) throws Exception,ParseException,IOException
 	{
 		log.info("Reading Input details...");
 		log.info("Test Data : -" + testData);
 		epmServerPageObj.config_Alarm_Code(testData.get("AlarmCode").toString(),
-										   testData.get("TrapID").toString(),
-										   testData.get("VerifyMessage").toString(),
+										   testData.get("TrapID").toString().replaceAll("\"", ""),
 										   testData.get("Message").toString());
 	}
 }

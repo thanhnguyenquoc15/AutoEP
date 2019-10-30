@@ -247,7 +247,8 @@ public class SNMPPage {
 		Button("Apply").click();
 		ComFuncObj.wait(1);
 		
-		if (verifyMessage == "yes") {
+		if (verifyMessage == "yes") 
+		{
 			String returnMessage = verify().getText();
 			log.info(returnMessage);
 			Assert.assertTrue(returnMessage.contains(message));

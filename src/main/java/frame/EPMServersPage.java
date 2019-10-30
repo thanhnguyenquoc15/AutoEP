@@ -56,8 +56,7 @@ public class EPMServersPage extends scripts.HelperClass {
 	
 
 	public void config_Alarm_Code(String alarm_Code,
-								  String trap_ID,
-								  String verifyMessage,
+								  String trap_ID,								  
 								  String message)
 	{
 		log.info("Config Alarm Code");
@@ -68,15 +67,17 @@ public class EPMServersPage extends scripts.HelperClass {
 		alarmCode(alarm_Code).click();
 		ComFuncObj.wait(1);
 		Button("Apply").click();
+		ComFuncObj.wait(1);
+		String test = trapID().getText().replaceAll("\\s+", "");
+		log.info(test);
+		log.info(trap_ID);
+		ComFuncObj.wait(2);
 		
-		Assert.assertTrue(trapID().getText().contains(trap_ID));
-		if (verifyMessage == "yes") {
-			String returnMessage = verify().getText();
-						log.info(returnMessage);
-			Assert.assertTrue(returnMessage.contains(message));
-			
-		}
-		
+		String returnMessage = verify().getText();
+		log.info(returnMessage); 
+		Assert.assertEquals(returnMessage,message,"Can not apply successfully");
+	
+		Assert.assertEquals(test,trap_ID,"Wrong Trap ID");
 	}
 	/*
 	 * @author: tqnguyen@avaya.com
